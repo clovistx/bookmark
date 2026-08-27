@@ -1,4 +1,4 @@
-# BOOKMARK
+# STASH
 
 Jornal diário dos bookmarks do X. Cada edição vive numa pasta datada e não é sobrescrita.
 
