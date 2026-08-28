@@ -4,14 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STASH / arquivo</title>
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <div class="shell">
     <div class="hud">
       <span>GRU / arquivo</span>
-      <span><a href="./">hoje</a></span>
       <span>signal · stash</span>
+      <label class="ed-nav">
+        <span>ed.</span>
+        <select data-editions aria-label="Edição">
+        <option value="2026-08-28">02 · 28 ago 2026</option>
+        <option value="2026-08-27">01 · 27 ago 2026</option>
+        </select>
+      </label>
+      <a class="arquivo" href="./">hoje</a>
     </div>
     <header class="mast">
       <div class="issue">//</div>
@@ -23,5 +30,6 @@
       <li><a href="./2026-08-27/">2026.08.27</a> — ed. 01 · 15 bookmarks</li>
     </ul>
   </div>
+    <script src="editions.js"></script>
 </body>
 </html>

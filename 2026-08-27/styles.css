@@ -190,6 +190,42 @@ footer {
   padding-top: 14px;
 }
 footer b, footer strong { color: var(--ink); font-weight: 500; }
+
+.hud .ed-nav { flex: 0 1 auto; }
+.ed-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mute);
+  min-width: 0;
+}
+.ed-nav > span { color: var(--mute); white-space: nowrap; }
+.ed-nav select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23d6ff4a' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 8px 5px;
+  color: var(--led);
+  border: 1px solid var(--line);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  padding: 4px 22px 4px 8px;
+  cursor: pointer;
+  max-width: 100%;
+  min-width: 11.5em;
+}
+.ed-nav select:hover,
+.ed-nav select:focus {
+  border-color: var(--led);
+  outline: none;
+}
+.hud a.arquivo, footer a.arquivo { color: var(--mute); }
+.hud a.arquivo:hover, footer a.arquivo:hover { color: var(--led); }
+footer .ed-nav { letter-spacing: 0.12em; }
 @media (max-width: 820px) {
   header.mast, .lede, .lede-grid, .wide, .pair, .classifieds { grid-template-columns: 1fr; }
   .hud, footer, .sec, .section-rule { flex-direction: column; gap: 8px; }

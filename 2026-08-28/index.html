@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 
 </head>
 <body>
@@ -15,7 +15,14 @@
     <div class="hud">
       <span>GRU / <b>sexta</b></span>
       <span>signal · stash</span>
-      <span><a href="../">hoje</a> · <a href="./">02</a> · <a href="../2026-08-27/">01</a> · <a href="../arquivo.html">arquivo</a></span>
+      <label class="ed-nav">
+        <span>ed.</span>
+        <select data-editions aria-label="Edição">
+        <option value="2026-08-28" selected>02 · 28 ago 2026</option>
+        <option value="2026-08-27">01 · 27 ago 2026</option>
+        </select>
+      </label>
+      <a class="arquivo" href="../arquivo.html">arquivo</a>
       <span>2026.08.28 · 02</span>
     </div>
     <header class="mast">
@@ -115,7 +122,16 @@
     <footer>
       <span>ed. 02 · 9 bookmarks novos · meme de code review omitido</span>
       <span>next <b>09:00 BRT</b> · só o que entrar esta noite</span>
+      <label class="ed-nav">
+        <span>ed.</span>
+        <select data-editions aria-label="Edição">
+        <option value="2026-08-28" selected>02 · 28 ago 2026</option>
+        <option value="2026-08-27">01 · 27 ago 2026</option>
+        </select>
+      </label>
+      <a class="arquivo" href="../arquivo.html">arquivo</a>
     </footer>
   </div>
+    <script src="../editions.js"></script>
 </body>
 </html>
