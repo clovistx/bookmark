@@ -3,219 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FLASHY · 01 set 17:25</title>
+  <title>FLASHY · 01 set · o dia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #06070c;
-      --ink: #e7eef8;
-      --mute: #7d8798;
-      --live: #ff3355;
-      --cyan: #3ee0ff;
-      --line: #1b2030;
-      --panel: #0d1018;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { background: var(--bg); color: var(--ink); }
-    body {
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      min-height: 100vh;
-      background-image:
-        linear-gradient(180deg, transparent 0%, rgba(62,224,255,0.03) 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 3px);
-    }
-    a { color: var(--cyan); text-decoration: none; }
-    a:hover { color: #fff; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 20px 22px 64px; }
-    .tape {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--mute);
-      border: 1px solid var(--line);
-      padding: 9px 12px;
-    }
-    .live {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--live);
-      font-weight: 500;
-    }
-    .pip {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--live);
-      box-shadow: 0 0 10px var(--live);
-      animation: blink 1.2s ease-in-out infinite;
-    }
-    @keyframes blink { 50% { opacity: 0.25; } }
-    header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .word {
-      font-family: "Big Shoulders Display", sans-serif;
-      font-weight: 800;
-      font-size: clamp(56px, 14vw, 104px);
-      line-height: 0.8;
-      letter-spacing: -0.03em;
-      text-transform: uppercase;
-    }
-    .word span { color: var(--live); }
-    .asof {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 12px;
-      color: var(--cyan);
-      letter-spacing: 0.08em;
-      text-align: right;
-      text-transform: uppercase;
-    }
-    .scan {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mute);
-      padding: 12px 0 22px;
-    }
-    .hit {
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 18px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .hit.lead { padding: 8px 0 22px; }
-    .t {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 11px;
-      color: var(--cyan);
-      letter-spacing: 0.08em;
-      padding-top: 6px;
-    }
-    h2 {
-      font-family: "Big Shoulders Display", sans-serif;
-      font-weight: 700;
-      font-size: clamp(28px, 4vw, 40px);
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      margin-bottom: 8px;
-    }
-    h3 {
-      font-family: "Big Shoulders Display", sans-serif;
-      font-weight: 700;
-      font-size: 26px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .who {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mute);
-      margin-bottom: 10px;
-    }
-    p { color: #c9d3e0; font-size: 16px; line-height: 1.5; margin-bottom: 10px; max-width: 40em; }
-    .cta { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
-    .cta a { border-bottom: 1px solid var(--cyan); }
-    .dropped {
-      margin-top: 28px;
-      padding: 14px 16px;
-      background: var(--panel);
-      border-left: 2px solid var(--live);
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 12px;
-      color: var(--mute);
-      letter-spacing: 0.04em;
-      line-height: 1.6;
-    }
-    footer {
-      margin-top: 36px;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mute);
-    }
-    @media (max-width: 640px) {
-      .hit, .hit.lead { grid-template-columns: 1fr; gap: 6px; }
-      header { flex-direction: column; }
-      .asof { text-align: left; }
-    }
+    :root { --bg:#06070c; --ink:#e7eef8; --mute:#7d8798; --live:#ff3355; --cyan:#3ee0ff; --line:#1b2030; --panel:#0d1018; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html,body { background:var(--bg); color:var(--ink); }
+    body { font-family:"IBM Plex Sans",system-ui,sans-serif; min-height:100vh; background-image:linear-gradient(180deg,transparent,rgba(62,224,255,.03)),repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.015) 3px); }
+    a { color:var(--cyan); text-decoration:none; }
+    a:hover { color:#fff; }
+    .wrap { max-width:920px; margin:0 auto; padding:20px 22px 64px; }
+    .tape { display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--mute); border:1px solid var(--line); padding:9px 12px; }
+    .live { display:inline-flex; align-items:center; gap:8px; color:var(--live); font-weight:500; }
+    .pip { width:7px; height:7px; border-radius:50%; background:var(--live); box-shadow:0 0 10px var(--live); animation:blink 1.2s ease-in-out infinite; }
+    @keyframes blink { 50% { opacity:.25; } }
+    header { display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:22px 0 18px; border-bottom:1px solid var(--line); }
+    .word { font-family:"Big Shoulders Display",sans-serif; font-weight:800; font-size:clamp(56px,14vw,104px); line-height:.8; letter-spacing:-.03em; text-transform:uppercase; }
+    .word span { color:var(--live); }
+    .asof { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; color:var(--cyan); letter-spacing:.08em; text-align:right; text-transform:uppercase; }
+    .scan { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); padding:12px 0 22px; }
+    .hit { display:grid; grid-template-columns:88px 1fr; gap:18px; padding:18px 0; border-bottom:1px solid var(--line); }
+    .hit.lead { padding:8px 0 22px; }
+    .t { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--cyan); letter-spacing:.08em; padding-top:6px; }
+    h2 { font-family:"Big Shoulders Display",sans-serif; font-weight:700; font-size:clamp(28px,4vw,42px); letter-spacing:-.02em; line-height:.95; margin-bottom:8px; }
+    h3 { font-family:"Big Shoulders Display",sans-serif; font-weight:700; font-size:26px; letter-spacing:-.02em; line-height:1; margin-bottom:8px; }
+    .who { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:10px; }
+    p { color:#c9d3e0; font-size:16px; line-height:1.5; margin-bottom:10px; max-width:42em; }
+    .cta { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; }
+    .cta a { border-bottom:1px solid var(--cyan); margin-right:10px; }
+    .dropped { margin-top:28px; padding:14px 16px; background:var(--panel); border-left:2px solid var(--live); font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; color:var(--mute); letter-spacing:.04em; line-height:1.6; }
+    footer { margin-top:36px; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
+    @media (max-width:640px) { .hit,.hit.lead { grid-template-columns:1fr; gap:6px; } header { flex-direction:column; } .asof { text-align:left; } }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="tape">
-      <span class="live"><i class="pip"></i> live</span>
+      <span class="live"><i class="pip"></i> recorte do dia</span>
       <span>home · @clovistx</span>
       <span>01.set.2026 · especial</span>
     </div>
     <header>
       <div class="word">Flas<span>h</span>y</div>
-      <div class="asof">as of 17:25 BRT<br>13 scanned · 4 kept</div>
+      <div class="asof">10:24 → 17:35 BRT<br>390 scanned · 7 pautas</div>
     </header>
-    <p class="scan">home timeline · últimos minutos · filtro: IA, agentes, infra, ferramenta</p>
+    <p class="scan">janela desde o fim da manhã · filtro: o que pesou, não o último tweet</p>
 
     <article class="hit lead">
-      <div class="t">17:21</div>
+      <div class="t">15:13</div>
       <div>
-        <h2>Local AI, agora com agente</h2>
-        <p class="who">@0xSero · LM Studio Bionic + local.ai</p>
-        <p>Bionic é o agente do LM Studio pra trabalho e código: docs, slides, PDF, software, modelo local ou frontier. No mesmo post, local.ai — benchmarks independentes de inteligência, velocidade, energia e hardware.</p>
-        <p>O vídeo é o tutorial. Se for abrir uma aba hoje, é essa.</p>
-        <p class="cta"><a href="https://lmstudio.ai">lmstudio.ai</a> · <a href="https://local.ai">local.ai</a> · <a href="https://x.com/0xSero/status/2094883461228003364">post</a></p>
+        <h2>Fable 5.1 caiu. Essa é a pauta.</h2>
+        <p class="who">Anthropic · Cursor · OpenRouter · Viticci</p>
+        <p>O modelo novo da Anthropic entrou em Claude Code, no Platform e no Cursor no mesmo bloco. Preço igual ao Fable 5, leitura de cache 75% mais barata. CursorBench 3.2: 73,4% — o mais alto que eles rodaram. OpenRouter confirmou o drop. Viticci celebrou o “writes in plain language”.</p>
+        <p>Limites de 5h e da semana resetados. Salvaguarda extra contra destilação (CoT). Cyber no próprio código, com fallback pra Opus. Se for testar uma coisa hoje, é essa.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094851229734277228">claude</a><a href="https://x.com/i/status/2094852929282879596">cursor</a><a href="https://x.com/i/status/2094848828398604395">viticci</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">12:45</div>
+      <div>
+        <h3>Grok Bot: máquina na nuvem e reset de token</h3>
+        <p class="who">@elonmusk · @ericzakariasson</p>
+        <p>Elon: o Bot roda num computador na nuvem 24/7 — laptop desligado não mata o agente. E outro reset grátis de token pra todo mundo. Eric apontou de novo o texto do Lingxi sobre frota de bots de engenharia (já estava no STASH de manhã).</p>
+        <p class="cta"><a href="https://x.com/i/status/2094815195516350754">cloud 24/7</a><a href="https://x.com/i/status/2094813795742847123">reset</a><a href="https://x.com/i/status/2094818067905941886">lingxi</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">11:21</div>
+      <div>
+        <h3>OpenRouter: Mercury 2.5 e lote no Render</h3>
+        <p class="who">@OpenRouter</p>
+        <p>Mercury 2.5 Preview (Inception): 1.107 tokens/s, o reasoning mais rápido deles, exclusivo no OpenRouter. Mais tarde: batches de LLM viram task no Render Workflows — cada prompt é um run com retry, sem worker pool eterno.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094792813603119482">mercury</a><a href="https://x.com/i/status/2094845816116740600">render</a></p>
       </div>
     </article>
 
     <article class="hit">
       <div class="t">17:13</div>
       <div>
-        <h3>Neocloud vira alvo quando o agente enlouquece</h3>
+        <h3>Ilya: neocloud é o próximo alvo do agente</h3>
         <p class="who">@ilyasut</p>
-        <p>Ilya: neoclouds têm pouca cyber. Da próxima vez que agentes derem runaway, vão tentar tomar um pra rodar mais cópias. Pedido: fortalecer a segurança — e quem tem modelo forte de cyber, ajudar.</p>
-        <p class="cta"><a href="https://x.com/ilyasut/status/2094881278621253755">post</a></p>
+        <p>Neoclouds com cyber fraca. Quando o agente der runaway, tenta tomar um pra clonar cópias. Pedido: reforçar segurança, e quem tem modelo forte de cyber, entrar.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094881278621253755">post</a></p>
       </div>
     </article>
 
     <article class="hit">
-      <div class="t">17:20</div>
+      <div class="t">12:43</div>
       <div>
-        <h3>Nebula no vidro, WebGPU</h3>
-        <p class="who">@npm_i_shaders</p>
-        <p>Nuvem espacial e estrelas presas em vidro. Qualquer forma 2D/3D. A linha do vgpu.sh da Vercel de ontem, ao vivo.</p>
-        <p class="cta"><a href="https://x.com/npm_i_shaders/status/2094883221184094287">post</a></p>
+        <h3>Local e browser: Bionic, Fleet, 1M de contexto</h3>
+        <p class="who">@0xSero · Fleet · OSS</p>
+        <p>LM Studio Bionic (agente local pra doc/código) + benchmarks local.ai. Fleet: GPU bench 100% no browser, kernels WebGPU de workload real, centenas open source. Alguém mergeou janela de 1M no main e corta release 26.9.1.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094883461228003364">bionic</a><a href="https://x.com/i/status/2094813465852490057">fleet</a><a href="https://x.com/i/status/2094878514793079197">1M ctx</a></p>
       </div>
     </article>
 
     <article class="hit">
-      <div class="t">17:13</div>
+      <div class="t">15:55</div>
       <div>
-        <h3>200 mil na live ≠ 200k RPS</h3>
-        <p class="who">@DePaulaAllyson</p>
-        <p>Encanamento de prédio: ninguém dá descarga ao mesmo tempo. Pareto na simultaneidade. Bom recorte de capacidade — o tipo de conta que a gente erra no slide.</p>
-        <p class="cta"><a href="https://x.com/DePaulaAllyson/status/2094881377879560673">post</a></p>
+        <h3>X mandou reset de senha. Não foi breach.</h3>
+        <p class="who">Int. Cyber Digest</p>
+        <p>Muita gente recebeu e-mail de reset que não pediu. Engenheiro do X: sem evidência de invasão — ataque tentando disparar o fluxo. Se não pediu, ignora o mail.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094861770699534624">post</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">radar</div>
+      <div>
+        <h3>Perplexity híbrido, vídeo via código, prompt de 270k</h3>
+        <p>Perplexity: cloud + classificador pra mandar request sensível pro modelo local no app. Fable 5.1 gerando vídeo por código (Blender headless). System prompt do 5.1 vazou, 270 mil caracteres.</p>
+        <p class="cta"><a href="https://x.com/i/status/2094805034160521404">perplexity</a><a href="https://x.com/i/status/2094860187743986169">vídeo</a><a href="https://x.com/i/status/2094862439653462387">prompt</a></p>
       </div>
     </article>
 
     <div class="dropped">
-      fora desta: Patreon do Viticci, robovac da Cult of Mac, mood do Inter, NASA walk, política, escova Dyson com câmera.
+      fora: Brasília/Vorcaro/Moraes, Irã, Ucrânia, NASA, robovac, Inter, Patreon. Política e guerra lotaram o feed; não entram neste recorte.
     </div>
-
-    <footer>flashy · especial · não é stash · pede quando quiser outra</footer>
+    <footer>flashy · especial do dia · 390 posts · ~us$ 2,00 de leitura · pede quando quiser outra</footer>
   </div>
 </body>
 </html>
