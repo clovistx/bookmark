@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FLASHY · 01 set 17:25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #06070c;
+      --ink: #e7eef8;
+      --mute: #7d8798;
+      --live: #ff3355;
+      --cyan: #3ee0ff;
+      --line: #1b2030;
+      --panel: #0d1018;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); color: var(--ink); }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      min-height: 100vh;
+      background-image:
+        linear-gradient(180deg, transparent 0%, rgba(62,224,255,0.03) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 3px);
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { color: #fff; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 20px 22px 64px; }
+    .tape {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mute);
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+    }
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--live);
+      font-weight: 500;
+    }
+    .pip {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--live);
+      box-shadow: 0 0 10px var(--live);
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink { 50% { opacity: 0.25; } }
+    header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .word {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 800;
+      font-size: clamp(56px, 14vw, 104px);
+      line-height: 0.8;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+    .word span { color: var(--live); }
+    .asof {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .scan {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mute);
+      padding: 12px 0 22px;
+    }
+    .hit {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .hit.lead { padding: 8px 0 22px; }
+    .t {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      padding-top: 6px;
+    }
+    h2 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      margin-bottom: 8px;
+    }
+    h3 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .who {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 10px;
+    }
+    p { color: #c9d3e0; font-size: 16px; line-height: 1.5; margin-bottom: 10px; max-width: 40em; }
+    .cta { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
+    .cta a { border-bottom: 1px solid var(--cyan); }
+    .dropped {
+      margin-top: 28px;
+      padding: 14px 16px;
+      background: var(--panel);
+      border-left: 2px solid var(--live);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+      color: var(--mute);
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 36px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    @media (max-width: 640px) {
+      .hit, .hit.lead { grid-template-columns: 1fr; gap: 6px; }
+      header { flex-direction: column; }
+      .asof { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="tape">
+      <span class="live"><i class="pip"></i> live</span>
+      <span>home · @clovistx</span>
+      <span>01.set.2026 · especial</span>
+    </div>
+    <header>
+      <div class="word">Flas<span>h</span>y</div>
+      <div class="asof">as of 17:25 BRT<br>13 scanned · 4 kept</div>
+    </header>
+    <p class="scan">home timeline · últimos minutos · filtro: IA, agentes, infra, ferramenta</p>
+
+    <article class="hit lead">
+      <div class="t">17:21</div>
+      <div>
+        <h2>Local AI, agora com agente</h2>
+        <p class="who">@0xSero · LM Studio Bionic + local.ai</p>
+        <p>Bionic é o agente do LM Studio pra trabalho e código: docs, slides, PDF, software, modelo local ou frontier. No mesmo post, local.ai — benchmarks independentes de inteligência, velocidade, energia e hardware.</p>
+        <p>O vídeo é o tutorial. Se for abrir uma aba hoje, é essa.</p>
+        <p class="cta"><a href="https://lmstudio.ai">lmstudio.ai</a> · <a href="https://local.ai">local.ai</a> · <a href="https://x.com/0xSero/status/2094883461228003364">post</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">17:13</div>
+      <div>
+        <h3>Neocloud vira alvo quando o agente enlouquece</h3>
+        <p class="who">@ilyasut</p>
+        <p>Ilya: neoclouds têm pouca cyber. Da próxima vez que agentes derem runaway, vão tentar tomar um pra rodar mais cópias. Pedido: fortalecer a segurança — e quem tem modelo forte de cyber, ajudar.</p>
+        <p class="cta"><a href="https://x.com/ilyasut/status/2094881278621253755">post</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">17:20</div>
+      <div>
+        <h3>Nebula no vidro, WebGPU</h3>
+        <p class="who">@npm_i_shaders</p>
+        <p>Nuvem espacial e estrelas presas em vidro. Qualquer forma 2D/3D. A linha do vgpu.sh da Vercel de ontem, ao vivo.</p>
+        <p class="cta"><a href="https://x.com/npm_i_shaders/status/2094883221184094287">post</a></p>
+      </div>
+    </article>
+
+    <article class="hit">
+      <div class="t">17:13</div>
+      <div>
+        <h3>200 mil na live ≠ 200k RPS</h3>
+        <p class="who">@DePaulaAllyson</p>
+        <p>Encanamento de prédio: ninguém dá descarga ao mesmo tempo. Pareto na simultaneidade. Bom recorte de capacidade — o tipo de conta que a gente erra no slide.</p>
+        <p class="cta"><a href="https://x.com/DePaulaAllyson/status/2094881377879560673">post</a></p>
+      </div>
+    </article>
+
+    <div class="dropped">
+      fora desta: Patreon do Viticci, robovac da Cult of Mac, mood do Inter, NASA walk, política, escova Dyson com câmera.
+    </div>
+
+    <footer>flashy · especial · não é stash · pede quando quiser outra</footer>
+  </div>
+</body>
+</html>
