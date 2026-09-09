@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STASH / assinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=6" />
+</head>
+<body>
+  <div class="shell">
+    <div class="hud">
+      <span>GRU / assinar</span>
+      <span>signal · stash</span>
+      <a class="arquivo" href="../">hoje</a>
+      <a class="arquivo" href="../arquivo.html">arquivo</a>
+    </div>
+    <header class="mast">
+      <div class="issue">@</div>
+      <div class="wordmark">Assinar</div>
+      <div class="meta">lista pequena<br>aviso por e-mail</div>
+    </header>
+
+    <section class="lede" style="grid-template-columns: 1fr; border-bottom: none;">
+      <article class="lead">
+        <div class="kicker">newsletter · amigos</div>
+        <h2>Quando sair uma edição nova, o link cai no seu e-mail</h2>
+        <p class="deck">STASH é o jornal matinal dos bookmarks do Clovis no X. Sem spam: um aviso curto por edição, com o link permanente.</p>
+        <form class="subscribe" action="https://formsubmit.co/clovist@gmail.com" method="POST">
+          <label class="subscribe-label" for="email">seu e-mail</label>
+          <div class="subscribe-row">
+            <input id="email" type="email" name="email" required placeholder="voce@email.com" autocomplete="email" />
+            <button type="submit">assinar</button>
+          </div>
+          <input type="hidden" name="_subject" value="STASH ASSINAR" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://clovistx.github.io/bookmark/assinar/obrigado.html" />
+          <p class="subscribe-note">Ao assinar, você recebe só o anúncio de edição nova. Pra sair, responda o e-mail pedindo cancelamento.</p>
+        </form>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
