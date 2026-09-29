@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css?v=6" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <div class="shell">
@@ -28,21 +29,51 @@
         <div class="kicker">newsletter · amigos</div>
         <h2>Quando sair uma edição nova, o link cai no seu e-mail</h2>
         <p class="deck">STASH é o jornal matinal dos bookmarks do Clovis no X. Sem spam: um aviso curto por edição, com o link permanente.</p>
-        <form class="subscribe" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="7c132ddc-a2d7-4a44-9b5c-6e4cdabd146d" />
-          <input type="hidden" name="subject" value="STASH ASSINAR" />
-          <input type="hidden" name="from_name" value="STASH" />
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="redirect" value="https://clovistx.github.io/bookmark/assinar/obrigado.html" />
+        <form class="subscribe" id="stash-subscribe" novalidate>
           <label class="subscribe-label" for="email">seu e-mail</label>
           <div class="subscribe-row">
             <input id="email" type="email" name="email" required placeholder="voce@email.com" autocomplete="email" />
-            <button type="submit">assinar</button>
+            <button type="submit" id="subscribe-btn">assinar</button>
           </div>
           <p class="subscribe-note">Ao assinar, você recebe só o anúncio de edição nova. Pra sair, responda o e-mail pedindo cancelamento.</p>
+          <p id="subscribe-error" class="subscribe-note" style="display:none;color:#c44;" role="alert"></p>
         </form>
       </article>
     </section>
   </div>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "zYsTwk5LyYt6EX-bf" });
+      var form = document.getElementById("stash-subscribe");
+      var btn = document.getElementById("subscribe-btn");
+      var err = document.getElementById("subscribe-error");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        err.style.display = "none";
+        err.textContent = "";
+        var email = document.getElementById("email").value.trim();
+        if (!email) {
+          err.textContent = "Digite um e-mail válido.";
+          err.style.display = "block";
+          return;
+        }
+        btn.disabled = true;
+        btn.textContent = "enviando…";
+        emailjs
+          .send("service_stash", "template_1oo8ndo", { email: email })
+          .then(function () {
+            window.location.href =
+              "https://clovistx.github.io/bookmark/assinar/obrigado.html";
+          })
+          .catch(function () {
+            err.textContent =
+              "Não deu pra assinar agora. Tenta de novo em um minuto.";
+            err.style.display = "block";
+            btn.disabled = false;
+            btn.textContent = "assinar";
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
