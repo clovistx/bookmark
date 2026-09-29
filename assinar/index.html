@@ -28,16 +28,17 @@
         <div class="kicker">newsletter · amigos</div>
         <h2>Quando sair uma edição nova, o link cai no seu e-mail</h2>
         <p class="deck">STASH é o jornal matinal dos bookmarks do Clovis no X. Sem spam: um aviso curto por edição, com o link permanente.</p>
-        <form class="subscribe" action="https://formsubmit.co/60a2b778e4b3b363b6c2c3ca0a091337" method="POST">
+        <form class="subscribe" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="7c132ddc-a2d7-4a44-9b5c-6e4cdabd146d" />
+          <input type="hidden" name="subject" value="STASH ASSINAR" />
+          <input type="hidden" name="from_name" value="STASH" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="redirect" value="https://clovistx.github.io/bookmark/assinar/obrigado.html" />
           <label class="subscribe-label" for="email">seu e-mail</label>
           <div class="subscribe-row">
             <input id="email" type="email" name="email" required placeholder="voce@email.com" autocomplete="email" />
             <button type="submit">assinar</button>
           </div>
-          <input type="hidden" name="_subject" value="STASH ASSINAR" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://clovistx.github.io/bookmark/assinar/obrigado.html" />
           <p class="subscribe-note">Ao assinar, você recebe só o anúncio de edição nova. Pra sair, responda o e-mail pedindo cancelamento.</p>
         </form>
       </article>
