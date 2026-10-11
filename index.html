@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STASH / 37 · 10 out 2026</title>
+  <title>STASH / 38 · 11 out 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -12,12 +12,13 @@
 <body>
   <div class="shell">
     <div class="hud">
-      <span>GRU / <b>sáb</b></span>
+      <span>GRU / <b>dom</b></span>
       <span>signal · stash</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-10" selected>37 · 10 out 2026</option>
+            <option value="2026-10-11" selected>38 · 11 out 2026</option>
+            <option value="2026-10-10">37 · 10 out 2026</option>
             <option value="2026-10-09">36 · 09 out 2026</option>
             <option value="2026-10-08">35 · 08 out 2026</option>
             <option value="2026-10-06">34 · 06 out 2026</option>
@@ -58,74 +59,74 @@
       </label>
       <a class="arquivo" href="arquivo.html">arquivo</a>
       <a class="arquivo" href="assinar/">assinar</a>
-      <span>2026.10.10 · 37</span>
+      <span>2026.10.11 · 38</span>
     </div>
 
     <header class="mast">
-      <div class="issue">37</div>
+      <div class="issue">38</div>
       <div class="wordmark">Stash</div>
       <div class="meta">Clovis Teixeira<br>bookmarks do X</div>
     </header>
 
     <section class="lede">
       <article class="lead">
-        <div class="kicker">inferência local · Mirai</div>
-        <h2>O Uzu roda um modelo de 9B a 92 tokens por segundo num MacBook Pro básico, quatro vezes mais rápido que o llama.cpp</h2>
-        <p class="deck">O truque é speculative decoding levado ao limite: o modelo grande deixa de gerar um token por passada e passa a aprovar sequências inteiras propostas por um drafter.</p>
-        <p class="byline">Sexta · @akshay_pachaar</p>
-        <p>Akshay Pachaar (@akshay_pachaar) rodou o Qwen3.5 9B num MacBook Pro M5 de entrada em três engines locais, uma de cada vez. O llama.cpp chegou a 22 tokens por segundo, o MLX a 25,1 e o Uzu, da Mirai, a 92,1. Ele faz questão de dizer que os dois primeiros não estão mal otimizados: cada token novo exige passar cerca de 5,2 GB de pesos pela memória, e com os 153 GB/s de bandwidth do M5 o teto teórico do decoding comum fica perto de 29 tokens por segundo, por mais rápida que seja a GPU.</p>
-        <p>O Uzu fura esse teto com um speculative decoding pensado para Apple Silicon. Um drafter propõe até 16 posições à frente, o Weaver transforma esses palpites independentes em sequências coerentes, e o modelo de 9B verifica várias delas de uma vez, organizadas como uma árvore, guardando estado só do caminho que aceita. Na medição dele, cada passada do modelo grande rendeu 7,5 tokens em média, contra exatamente um no decoding tradicional, e quem decide o output final continua sendo o 9B.</p>
-        <p>O projeto é open source, com licença MIT, checkpoints quantizados próprios e bindings para Rust, Swift, Python e TypeScript; nos chips M5, a verificação usa o caminho acelerado de matrizes int8 da GPU. Vale instalar e repetir o teste com um prompt do teu dia a dia, porque o ganho depende de quanto o drafter acerta naquele tipo de texto. O artigo citado no post traz a explicação completa, com resultados e código para reproduzir.</p>
-        <p class="cta"><a href="https://x.com/akshay_pachaar/status/2108497955049345102">vídeo</a> · <a href="https://github.com/trymirai/uzu">GitHub</a> · <a href="https://x.com/akshay_pachaar/status/2108252095380140203">artigo citado</a></p>
+        <div class="kicker">linguagem · coding agents</div>
+        <h2>O Tov escreve como TypeScript, compila via C e promete binários mais rápidos que os do Rust, tudo pensado para coding agents</h2>
+        <p class="deck">É uma linguagem experimental em que o compilador devolve ao agent a correção pronta, e o que vai para produção é um único binário nativo de poucos KB.</p>
+        <p class="byline">Sábado · @richiemcilroy</p>
+        <p>Richie McIlroy (@richiemcilroy), fundador do Cap, o gravador de tela open source, postou o link do tov.sh com um “wtf who made this”, mas o próprio site assina o projeto como obra do time do Cap. O Tov lê a sintaxe e os tipos do TypeScript, com <code>int</code> e <code>f64</code> separados e as APIs de Bun e Node, e corta o que costuma confundir: não existe <code>any</code>, <code>null</code> nem <code>==</code>, e toda chamada que pode falhar precisa ser marcada com <code>try</code>. O checker, escrito em Rust, transforma o programa inteiro num arquivo C, que o clang compila junto com um runtime próprio, sem garbage collector e com a contagem de referências escrita no próprio código gerado.</p>
+        <p>O detalhe que justifica o rótulo “para agents” é o <code>tov check --json</code>: cada erro vem com código, posição e, quando a correção é óbvia, o edit exato marcado como “safe”, que o agent aplica sem precisar interpretar mensagem de compilador. Nos benchmarks publicados, medidos num M4 Max, um servidor JSON em Tov atende 242 mil requisições por segundo num único core, contra 216 mil do Rust com axum e 111 mil do Bun, usando 1,6 MB de memória; o compile leva 42 ms e o binário stripped fica em 33 KB. O time também testou a linguagem dentro do Cap, com um encoder H.264 escrito em Tov que saiu, em média, 5,2 vezes mais rápido que o x264 no preset veryfast em gravações de tela.</p>
+        <p>A versão é a 0.0.1, marcada como experimental, e ainda faltam suporte a Windows, gerenciador de pacotes próprio, enums e tuplas, então ninguém deveria migrar um backend para ela agora. O experimento que faz sentido é o que o site sugere: colar no teu agent o prompt pronto, que instala o compilador, lê o llms.txt e passa a rodar <code>tov check --json</code> depois de cada edit, e pedir um CLI pequeno ou um endpoint HTTP para ver quantas voltas ele precisa até o binário sair.</p>
+        <p class="cta"><a href="https://x.com/richiemcilroy/status/2108906020366106741">post</a> · <a href="https://tov.sh">tov.sh</a> · <a href="https://tov.sh/llms.txt">llms.txt</a></p>
       </article>
       <figure>
-        <img src="img/uzu.jpg" alt="README do Uzu, On-Device Inference Engine, com três terminais lado a lado: llama.cpp, MLX e uzu by Mirai rodando o Qwen3.5 9B em 4 bits" />
-        <figcaption>O README do Uzu com a corrida lado a lado contra llama.cpp e MLX, frame do vídeo do post.</figcaption>
+        <img src="img/tov.jpg" alt="Home do tov.sh com o título Faster than Rust. Written like TypeScript. e a comparação de requisições por segundo entre Tov, Rust (axum) e Bun" />
+        <figcaption>A home do tov.sh, ainda na versão 0.0.1 experimental, abre com o benchmark de web server contra Rust e Bun.</figcaption>
       </figure>
     </section>
 
     <div class="sec">
       <span class="idx">02</span>
-      <h2>Modelo menor, decoding mais rápido</h2>
-      <span class="kicker">llama.cpp · 2-bit</span>
+      <h2>Agents mais baratos, decisões mais rápidas</h2>
+      <span class="kicker">Claude Code · Neural Engine</span>
     </div>
 
     <div class="wide">
       <article class="story">
-        <div class="kicker">llama.cpp · Metal</div>
-        <figure><img src="img/llamacpp-metal.jpg" alt="Gráficos de barras comparando tokens por segundo do llama.cpp master com o PR 29869 em prompts de código e de prosa, com speedup de até 3,7 vezes" /></figure>
-        <h3><a href="https://x.com/qvac/status/2107043339799593421">Um PR da QVAC fez o speculative decoding finalmente compensar no llama.cpp em Apple Silicon</a></h3>
-        <p>A equipe da QVAC (@qvac) conta que teve merge no llama.cpp de novos kernels Metal para speculative decoding, com revisão de Georgi Gerganov (@ggerganov). Antes do PR #29869, especular no Mac saía mais lento do que gerar token a token; agora, num M3 Ultra, o ganho chega a 3,4 vezes, com 110 tokens por segundo contra 32,1. O gráfico mostra que a vantagem cresce com o tamanho do draft num prompt de código e estaciona mais cedo em prosa, perto de 64 tokens por segundo. É a mesma ideia do Uzu da capa chegando ao engine mais usado, e quem já roda o llama.cpp com modelo de draft pode atualizar e variar o --spec-draft-n-max, a flag usada no benchmark.</p>
-        <p class="cta"><a href="https://x.com/qvac/status/2107043339799593421">post</a> · <a href="https://github.com/ggml-org/llama.cpp/pull/29869">PR no GitHub</a></p>
+        <div class="kicker">Claude Code · prompt cache</div>
+        <h3><a href="https://x.com/gabrielbuzziv/status/2108928062306058434">Se o limite do Claude Code anda evaporando, o culpado pode ser o cache de cinco minutos dos subagents</a></h3>
+        <p>Gabriel Buzzi (@gabrielbuzziv) chamou atenção para um detalhe que Lydia Hallie (@lydiahallie), da Anthropic, confirmou numa resposta: na assinatura, o chat principal do Claude Code guarda o prompt cache por uma hora, mas os subagents, assim como o billing por API, ficam com apenas cinco minutos. Na prática, um subagent que passa mais de cinco minutos parado relê o contexto inteiro na volta e consome o limite de novo. A correção é uma linha no <code>~/.claude/settings.json</code>, <code>"subagentPromptCacheTtl": "1h"</code>, e existe também o <code>promptCacheTtl</code> para a sessão principal. O próprio Gabriel avisa que gravar cache de uma hora custa mais, então a mudança compensa em orquestrações longas, com subagents que vão e voltam, e não em tarefas rápidas.</p>
+        <p class="cta"><a href="https://x.com/gabrielbuzziv/status/2108928062306058434">post</a> · <a href="https://x.com/lydiahallie/status/2108637982005833973">resposta da Lydia Hallie</a></p>
       </article>
       <article class="story">
-        <div class="kicker">modelo aberto · 2-bit</div>
-        <figure><img src="img/saluki.jpg" alt="Tabela Saluki 27B versus Qwen 3.8 27B completo: menos de 8 GB, retenção de 104,8% em tool calling e 96% na média de nove benchmarks" /></figure>
-        <h3><a href="https://x.com/UnderdogAI/status/2108021482983133395">O Saluki espreme o Qwen3.8 27B em 7,89 GB e ainda chama tools melhor que o original</a></h3>
-        <p>A Underdog (@UnderdogAI) lançou o Saluki 27B, uma versão em 2 bits do Qwen3.8 27B que ocupa 7,89 GB, contra cerca de 54 GB do modelo cheio. Na média de nove benchmarks ele mantém 96% do desempenho, e nas tabelas da própria empresa supera o original em tool calling, tool calls paralelas e instruction following, enquanto cede mais terreno em raciocínio e matemática de competição, onde fica na casa de 83% a 85%. Roda no llama.cpp padrão, tem licença Apache 2.0 e já está no Hugging Face. A empresa avisa que é um checkpoint de preview, que só aceita texto e que vale desligar o thinking quando a ideia é ter tool calls rápidas.</p>
-        <p class="cta"><a href="https://x.com/UnderdogAI/status/2108021482983133395">post</a> · <a href="https://underdog.ai/saluki">underdog.ai/saluki</a></p>
+        <div class="kicker">Neural Engine · Core AI</div>
+        <figure><img src="img/anemll.jpg" alt="Demo Jeff decides, System 1 ANE Engine, com tabuleiros de Tetris e Snake ao lado de um monitor de CPU, GPU e ANE de um Apple M5 Max" /></figure>
+        <h3><a href="https://x.com/anemll/status/2108749444292264241">O System 1 da Anemll faz um modelo de 0.8B decidir em milissegundos no Neural Engine, sem gerar texto</a></h3>
+        <p>A Anemll (@anemll), projeto open source dedicado a rodar modelos no Apple Neural Engine, publicou o System 1, que usa o Core AI da Apple para tomar decisões numa única forward pass. Em vez de gerar uma resposta e depois fazer parse do texto, o modelo devolve uma probabilidade para cada opção possível, como as rotações e colunas de uma peça de Tetris ou a próxima direção no Snake. As demos rodam o Jeff, um fine-tune do Qwen3.5-0.8B, e adapters treinados com o Unsloth, e no frame do vídeo cada jogada do Snake sai em cerca de 65 ms. A mesma lógica serve para qualquer router ou classificador dentro de um agent, e o código das demos, incluindo a de text routing, já está no GitHub.</p>
+        <p class="cta"><a href="https://x.com/anemll/status/2108749444292264241">vídeo</a> · <a href="https://github.com/Anemll/system1-ane">GitHub</a></p>
       </article>
     </div>
 
     <div class="sec">
       <span class="idx">03</span>
-      <h2>Interface e espectro</h2>
-      <span class="kicker">React · satélite</span>
+      <h2>Arquivos e ligações</h2>
+      <span class="kicker">macOS · voz</span>
     </div>
 
     <div class="wide">
       <article class="story">
-        <div class="kicker">React · shadcn</div>
-        <figure><img src="img/arc-ui.jpg" alt="Arc: Build interfaces that feel finished, com cartões de um gráfico de metas, um cartão de débito, uma pasta de moodboard e um feed mobile" /></figure>
-        <h3><a href="https://x.com/eliakuratli/status/2108492839546147149">O Arc UI promete componentes animados que não têm cara de interface feita por IA</a></h3>
-        <p>Elia (@eliakuratli) apresentou o Arc dizendo que o Claude Code finalmente consegue construir UI que não parece feita por IA. A biblioteca tem 154 componentes React e 90 blocks com motion embutido, de gráficos que você arrasta para ler cada dia a command palettes e inboxes que fecham o espaço quando uma mensagem é arquivada, e tudo entra no projeto pelo shadcn CLI. O que chama atenção é que ela foi pensada para agents: cada componente tem uma página em Markdown, existe um índice llms.txt e o registry funciona com Claude, Cursor ou Codex. Há um plano Pro com 46 componentes de motion extras e blocks maiores, então o caminho natural é começar pelos gratuitos e apontar o teu agent para a documentação.</p>
-        <p class="cta"><a href="https://x.com/eliakuratli/status/2108492839546147149">post</a> · <a href="https://uiarc.dev/">uiarc.dev</a></p>
+        <div class="kicker">macOS · arquivos</div>
+        <figure><img src="img/homy-card.jpg" alt="Card do Homy: Your Mac's files, finally beautiful. A file browser for your Mac, com filtros de imagens, vídeos, música, documentos, arquivos compactados e apps" /></figure>
+        <h3><a href="https://x.com/hii_mohit/status/2108809851136815223">O Homy quer ser o Finder que mostra as coisas, e não só o nome dos arquivos</a></h3>
+        <p>Mohit Vaswani (@hii_mohit) lançou o Homy, um file browser nativo para Mac, feito em SwiftUI, que organiza imagens, vídeos, músicas, documentos, arquivos compactados e apps em prateleiras com thumbnails grandes. A busca aceita linguagem natural, como “pdfs from last week over 5 mb”, e mostra em chips como entendeu o pedido; o app também lê o texto dentro de screenshots com o Vision framework, agrupa downloads pela origem, de Gmail a WhatsApp, e encontra duplicatas pelo conteúdo. Tudo roda localmente, sem conta nem upload, e o que sai vai para a Lixeira em vez de ser apagado de vez. Custa US$ 9 em pagamento único para os primeiros 200 compradores e US$ 29 depois, e o teste mais revelador é apontá-lo para a pasta Downloads e ver quanto espaço ele propõe liberar.</p>
+        <p class="cta"><a href="https://x.com/hii_mohit/status/2108809851136815223">vídeo</a> · <a href="https://tryhomy.app">tryhomy.app</a></p>
       </article>
       <article class="story">
-        <div class="kicker">Brasil · telecom</div>
-        <h3><a href="https://x.com/Starlink/status/2108676180467724397">A Anatel aprovou o acesso total do Starlink Mobile à faixa de 2 GHz no Brasil</a></h3>
-        <p>A conta oficial da Starlink (@Starlink) comemorou a decisão da Anatel, que votou pela liberação de toda a faixa de 2 GHz para o Starlink Mobile, apoiada na prioridade global da empresa na banda S. Segundo o post, a ideia é usar esse espectro de média frequência para levar banda larga móvel de alta velocidade direto aos aparelhos dos brasileiros. O anúncio não traz prazos, preços nem operadoras parceiras, então por ora é uma vitória regulatória, e o que vale acompanhar é quando o sinal chega de fato ao celular comum.</p>
-        <p class="cta"><a href="https://x.com/Starlink/status/2108676180467724397">post</a> · <a href="https://x.com/Starlink">@Starlink</a></p>
+        <div class="kicker">Grok Bot · voz</div>
+        <figure><img src="img/grokbot-call.jpg" alt="Tela Grok Bot's phone com ligação ao vivo, o mascote segurando um celular e as ondas de áudio da recepção do hotel, do lado humano, e do Grok Bot, do lado da AI" /></figure>
+        <h3><a href="https://x.com/lafraia/status/2108535583798657469">Daniel Lafraia pôs o Grok Bot para ligar para um hotel, com voz em tempo real</a></h3>
+        <p>Numa conversa com Deborah Folloni (@dfolloni) e Glaucia Lemos (@glaucia_lemos86), a mesma do time de Grok Bots que saiu na ed. 36, Daniel Lafraia (@lafraia), do Vagalume e da Panda Video, mostrou um vídeo em que pediu ao Grok Bot para gravar uma ligação de teste para a recepção de um hotel. Segundo ele, a chamada sai por VoIP e a voz é a da OpenAI em tempo real, enquanto a tela mostra quem está falando, se o humano ou a AI. A Deborah logo perguntou se ele paga pelo número e pelo sandbox, que é justamente a conta que separa a demo do uso diário. Para quem já usa o Grok Bot, o caminho prudente é reproduzir o fluxo numa ligação de baixo risco, como confirmar o horário de um restaurante, antes de confiar a ele uma reserva de verdade.</p>
+        <p class="cta"><a href="https://x.com/lafraia/status/2108535583798657469">vídeo</a> · <a href="https://x.com/dfolloni/status/2108516873998655864">pergunta da Deborah</a></p>
       </article>
     </div>
 
@@ -138,29 +139,30 @@
     <div class="classifieds">
       <div class="ad">
         <div class="kicker">bookmarks</div>
-        <h3>5 saves desde a ed. 36</h3>
-        <p>Cinco bookmarks entraram desde ontem, e três deles giram em torno do mesmo tema: fazer modelo local responder mais rápido ou caber em menos memória. O post da QVAC é de 5 de outubro e só foi salvo agora. A capa ficou com o Uzu porque o salto de 22 para 92 tokens por segundo no mesmo hardware é o número mais difícil de ignorar.</p>
+        <h3>6 saves desde a ed. 37</h3>
+        <p>Seis bookmarks entraram desde ontem, e a maioria fala de ferramentas desenhadas para agents, do compilador que devolve o fix pronto ao cache dos subagents. A capa ficou com o Tov porque é a aposta mais ousada da lista: uma linguagem nova que já estreia com benchmark contra Rust na primeira página.</p>
       </div>
       <div class="ad">
-        <div class="kicker">conta do dia</div>
-        <h3>O teto de 29 tokens</h3>
-        <p>Dividir a bandwidth de memória pelo tamanho dos pesos dá o limite do decoding comum, e no exemplo do Akshay isso é 153 GB/s divididos por 5,2 GB. Qualquer engine que passe disso está, na prática, aprovando mais de um token por passada.</p>
+        <div class="kicker">frase salva</div>
+        <h3>2.500 PRs por mês</h3>
+        <p>O perfil 0x45 (@0x45o) provocou quem ainda tem receio de agents: segundo o post, a engenheira @poteto, a mesma do pstack que já passou por aqui, confia nos bots dela para entregar 2.500 PRs por mês numa empresa de um bilhão de dólares. O número vem sem fonte, mas a provocação serve para qualquer projeto pessoal que ainda é tocado inteiro na mão.</p>
       </div>
       <div class="ad">
-        <div class="kicker">pro sábado</div>
-        <h3>Um teste caseiro</h3>
-        <p>Dá para montar a comparação em casa: o mesmo prompt de código no llama.cpp com e sem draft, e depois no Uzu, anotando os tokens por segundo de cada um. Prompt de código costuma favorecer a especulação, então vale repetir com um texto em prosa para ver a diferença.</p>
+        <div class="kicker">pro domingo</div>
+        <h3>Um ajuste de uma linha</h3>
+        <p>A mudança no <code>subagentPromptCacheTtl</code> é o experimento mais barato da edição. Basta editar o settings.json, rodar uma orquestração longa e comparar quanto do limite foi embora; se as sessões não passam de alguns minutos, o melhor é manter o padrão.</p>
       </div>
     </div>
 
 
     <footer>
-      <span>ed. 37 · 5 bookmarks novos</span>
+      <span>ed. 38 · 6 bookmarks novos</span>
       <span>next <b>09:00 BRT</b> · só o que entrar esta noite</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-10" selected>37 · 10 out 2026</option>
+            <option value="2026-10-11" selected>38 · 11 out 2026</option>
+            <option value="2026-10-10">37 · 10 out 2026</option>
             <option value="2026-10-09">36 · 09 out 2026</option>
             <option value="2026-10-08">35 · 08 out 2026</option>
             <option value="2026-10-06">34 · 06 out 2026</option>
