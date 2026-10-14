@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STASH / 40 · 13 out 2026</title>
+  <title>STASH / 41 · 14 out 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -12,12 +12,13 @@
 <body>
   <div class="shell">
     <div class="hud">
-      <span>GRU / <b>ter</b></span>
+      <span>GRU / <b>qua</b></span>
       <span>signal · stash</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-13" selected>40 · 13 out 2026</option>
+            <option value="2026-10-14" selected>41 · 14 out 2026</option>
+            <option value="2026-10-13">40 · 13 out 2026</option>
             <option value="2026-10-12">39 · 12 out 2026</option>
             <option value="2026-10-11">38 · 11 out 2026</option>
             <option value="2026-10-10">37 · 10 out 2026</option>
@@ -61,102 +62,76 @@
       </label>
       <a class="arquivo" href="arquivo.html">arquivo</a>
       <a class="arquivo" href="assinar/">assinar</a>
-      <span>2026.10.13 · 40</span>
+      <span>2026.10.14 · 41</span>
     </div>
 
     <header class="mast">
-      <div class="issue">40</div>
+      <div class="issue">41</div>
       <div class="wordmark">Stash</div>
       <div class="meta">Clovis Teixeira<br>bookmarks do X</div>
     </header>
 
+
     <section class="lede">
       <article class="lead">
-        <div class="kicker">frontier models · Meta</div>
-        <h2>A Meta entrou na briga dos frontier models com o Muse Wonder, e a aposta é em agents de trabalho</h2>
-        <p class="deck">Mark Zuckerberg apresentou na segunda a família Muse Wonder, com dois modelos que lideram a tabela da própria Meta em tarefas de agents pessoais e profissionais, mas ainda perdem para o Claude Opus 5.5 em parte dos benchmarks de código.</p>
-        <p class="byline">Segunda · @finkd · Meta Superintelligence Labs</p>
-        <p>O Muse Wonder é o primeiro frontier model da Meta desde que o laboratório de superinteligência da empresa foi reorganizado, e chega em duas versões. O Muse Wonder sai pela Meta Model API e pelo Muse Code a US$ 4 por milhão de tokens de input e US$ 20 por milhão de output, faixa de preço parecida com a do Opus 5.5. Já o Muse Wonder Full, o mais capaz, fica fora da API e só roda para quem assina os planos Power ou Maximum Usage do Muse Code. Os dois aceitam texto, imagem, vídeo e áudio como input, respondem em texto e trabalham com um context window de 1 milhão de tokens.</p>
-        <p>A tabela que acompanhou o anúncio mostra o Wonder Full na frente em agents de trabalho, com 13,1 no Harvey LAB-AA de tarefas jurídicas, contra 4,2 do Opus 5.5, e 85,5 no MemoryBench, que mede a capacidade de lembrar contexto. O mesmo quadro, porém, deixa o Opus 5.5 na liderança em Terminal-Bench, ProgramBench e no índice geral da Artificial Analysis, e o número de destaque da Meta, o Personal Superintelligence Index, é um índice interno da própria empresa. O teste honesto é pegar uma tarefa longa que você já roda com outro modelo, como uma análise de planilha com várias etapas, e repetir a mesma tarefa no Muse Wonder pela API para comparar resultado e custo.</p>
-        <p class="cta"><a href="https://x.com/finkd/status/2109689305073614918">post do Zuckerberg</a> · <a href="https://research.meta.ai/blog/muse-wonder">anúncio</a> · <a href="https://dev.meta.ai/resources/blog/build-with-muse-wonder">para devs</a></p>
+        <div class="kicker">busca semântica · EmbeddingGemma 2</div>
+        <h2>O DigUp faz o Mac achar arquivos pelo que eles mostram e dizem, sem mandar nada para a nuvem</h2>
+        <p class="deck">O app open source que o perfil oficial do Gemma destacou na terça vive na menu bar e usa o EmbeddingGemma 2 para buscar foto, PDF, áudio, vídeo e código em linguagem natural, tudo rodando local.</p>
+        <p class="byline">Terça · @googlegemma · DigUp, de ARahim3</p>
+        <p>A provocação do post do Google Gemma (@googlegemma) é direta: e se o Spotlight entendesse o significado do que está dentro dos arquivos? O DigUp, projeto do desenvolvedor ARahim3 no GitHub, tenta responder isso com o EmbeddingGemma 2, o modelo de embeddings multimodal de 740M de parâmetros que o Google DeepMind lançou em outubro e que coloca texto, imagem, áudio e vídeo no mesmo espaço vetorial. Na prática, a busca "zebra in a video" abre o clipe no segundo em que a zebra aparece, "where they talk about sleep" pula para o minuto certo de um podcast e uma cláusula de contrato aparece com as palavras marcadas na página do PDF. O app também mantém um índice de keywords ao lado dos vetores, então números de nota, códigos de erro e nomes continuam sendo encontrados exatamente como foram escritos, inclusive dentro de screenshots.</p>
+        <p>Por baixo, o DigUp roda o build de 8 bits do modelo pelo llama.cpp na GPU, guarda tudo num índice SQLite e só vai à internet para baixar o modelo uma vez, com 865 MB, e checar atualização, sem conta e sem telemetria. É o segundo dia seguido em que o EmbeddingGemma 2 aparece no STASH, depois do port para o Core AI da EverPaper, e agora já existe um app pronto em cima dele. O caminho mais curto é instalar com <code>brew install --cask arahim3/tap/digup</code>, apontar uma pasta de screenshots e PDFs, abrir o painel com ⇧⌘Space e, como o modelo cobre mais de 100 idiomas, testar uma busca em português contra arquivos escritos em inglês. Para quem programa, a busca com o prefixo <code>code:</code> encontra funções pelo que elas fazem e abre o arquivo na linha certa no Zed, no VS Code ou no Cursor.</p>
+        <p class="cta"><a href="https://x.com/googlegemma/status/2110044337849692644">vídeo</a> · <a href="https://github.com/ARahim3/DigUp">GitHub</a> · <a href="https://github.com/ARahim3/DigUp/releases">download</a></p>
       </article>
       <figure>
-        <img src="img/muse.jpg" alt="Tabela de benchmarks comparando Muse Wonder Full, Muse Wonder, Claude Fable 5.1, GPT-6 Astra e Claude Opus 5.5 em Personal Superintelligence Index, Harvey LAB-AA, Vals Finance Agent V2, HealthBench Pro e AutomationBench-AA" />
-        <figcaption>O topo da tabela da Meta, com o Muse Wonder Full na frente em quatro de cinco testes de agents de trabalho.</figcaption>
+        <img src="img/digup.jpg" alt="Painel de busca do DigUp com a consulta zebra in a video, mostrando o vídeo Masai Mara - day 2.mp4 aberto no frame de 0:42 com zebras pastando e duas fotos de zebras como resultados extras" />
+        <figcaption>"zebra in a video": o DigUp acha o frame exato, aos 0:42, num vídeo que não tem legenda nem tag.</figcaption>
       </figure>
     </section>
 
     <div class="sec">
       <span class="idx">02</span>
-      <h2>Quem paga a conta</h2>
-      <span class="kicker">planos · SaaS</span>
+      <h2>O que o harness decide</h2>
+      <span class="kicker">agents · vídeo em código</span>
     </div>
 
     <div class="wide">
       <article class="story">
-        <div class="kicker">Grok · Cursor · X</div>
-        <figure><img src="img/x-sub.jpg" alt="Três quadros do vídeo de lançamento da The X Subscription: formas geométricas em traço fino, quadrados empilhados que terminam no logo do X e, por fim, quatro marcas lado a lado" /></figure>
-        <h3><a href="https://x.com/SpaceXSI/status/2109783335296008414">A The X Subscription junta Grok, Cursor e X Premium num plano só, com uma cota semanal compartilhada</a></h3>
-        <p>A SpaceX Super Intelligence (@SpaceXSI) lançou na segunda à noite a The X Subscription, que unifica Grok, Grok Bot, Cursor e X Premium numa única assinatura, com planos de US$ 0, 8, 30, 100 e 200 por mês. Os planos pagos trazem uma cota de uso dos modelos Grok que vale ao mesmo tempo nos apps do Grok, na aba do Grok no X e no Cursor, e essa cota renova toda semana. Segundo o anúncio no fórum do Cursor, cada plano inclui pelo menos o dobro do uso de código com modelos Grok em relação ao plano equivalente do Cursor, mas Claude e GPT passam a ser cobrados à parte, a preço de API, por top-ups com limite de gasto. Os planos antigos continuam valendo e a troca é opcional, só que ela não tem volta, então o certo é olhar quanto do teu uso no Cursor hoje vai para modelos de terceiros antes de clicar em unificar.</p>
-        <p class="cta"><a href="https://x.com/SpaceXSI/status/2109783335296008414">vídeo</a> · <a href="https://docs.x.ai/x-subscription/pricing">preços</a> · <a href="https://cursor.com/help/the-x-subscription/overview">FAQ do Cursor</a></p>
+        <div class="kicker">coding agents · custo</div>
+        <figure><img src="img/reason.png" alt="Gráfico Quality vs cost Pareto frontier com o Coding Agent Index no eixo vertical e o custo por tarefa no horizontal; a estrela dourada do Reason com GPT-6 Astra xhigh aparece perto de 65 pontos e 4 dólares, acima de Codex, Claude Code, Devin e Muse Code" /></figure>
+        <h3><a href="https://x.com/reasonmachines/status/2110001062216376724">O Reason quer provar que o harness, e não o modelo, é quem define a conta de um coding agent</a></h3>
+        <p>A Reason (@reasonmachines) apresentou o Reason Agent 1.1, um harness de código que, rodando o mesmo GPT-6 Astra, superou o Codex no Coding Agent Index da Artificial Analysis, com 65,1 contra 62,5, e saiu 22% mais barato por tarefa resolvida, segundo a própria empresa. O truque tem dois pilares: uma ferramenta chamada codemode, em que o modelo escreve um único programa em JavaScript que chama as outras tools em paralelo, e um conjunto mínimo de tools com prompt fixo, de modo que cada turno só acrescenta conteúdo e quase tudo fica elegível para cache. O resultado declarado é 23% menos tokens de input por tentativa, e o post diz que o harness, construído em cima do Pi, pode ser usado de graça. Como os números vêm dos testes da própria Reason, o melhor uso do anúncio é abrir os jobs públicos no Harbor que o blog linka e, se o teu time paga muito em tokens de input, olhar a taxa de cache hit do agent que vocês já usam.</p>
+        <p class="cta"><a href="https://x.com/reasonmachines/status/2110001062216376724">post</a> · <a href="https://reasonmachines.com/blog/introducing-reason-agent-1-1">blog do Reason Agent 1.1</a></p>
       </article>
       <article class="story">
-        <div class="kicker">SaaS · fosso</div>
-        <figure><img src="img/saas-quote.jpg" alt="Cartão com a frase se você entrega algo com ia pra público digitalizado, você vai morrer, e os números de queda de MRR citados por Yuri Aquino" /></figure>
-        <h3><a href="https://x.com/yuridavalida/status/2109645318732353898">Dois founders de SaaS contaram a Yuri Aquino como a IA levou parte da receita recorrente deles</a></h3>
-        <p>Yuri Aquino (@yuridavalida), da ValidaPay, relatou uma call com dois founders de SaaS que faturam mais de 100 mil por mês e saiu dela com uma frase incômoda: quem entrega algo com IA para um público já digitalizado corre o risco de morrer. Um deles perdeu mais de 80 mil de MRR em seis meses porque o próprio cliente montou a ferramenta internamente com IA e cancelou a mensalidade. No outro caso, um SaaS caiu de 200 mil para 70 mil de recorrência em menos de um ano, demitiu o time e hoje roda quase tudo com agents. A pergunta que ele deixa no fim serve para qualquer empresa que vende software, e um bom exercício é respondê-la por escrito: o que o teu cliente não conseguiria reconstruir sozinho num fim de semana com um coding agent?</p>
-        <p class="cta"><a href="https://x.com/yuridavalida/status/2109645318732353898">post</a></p>
+        <div class="kicker">vídeo · prompt</div>
+        <figure><img src="img/v4mos.jpg" alt="Página V4MOS vídeos feitos em código, com o título Salve, galera do X, o prompt original num balão e um player com a frase Mas qual campanha virou reunião, seguido das miniaturas das opções A, B, D e E" /></figure>
+        <h3><a href="https://x.com/guilippert_v4/status/2109665742799184066">Guilherme Lippert mostra que o melhor prompt para vídeo em código é um vídeo de exemplo</a></h3>
+        <p>Respondendo a Deborah Folloni (@dfolloni), Guilherme Lippert (@guilippert_v4) contou que o que mais funcionou para ele foi entregar vídeos de exemplo ao agent e pedir apenas que ele se inspirasse, com cada resultado saindo em one-shot. A página V4MOS · vídeos em código mostra o prompt que começou tudo, um link para um post de motion design e a frase "eu gosto de coisa mais dinâmica assim", que rendeu opções de vídeo em 16:9 e 9:16 com trilha e efeitos sintetizados por código, sem samples. A história dos bastidores também é boa: a página puxou 294 GB num único dia contra uma franquia de 100 GB por mês, a hospedagem cortou tudo com um 402 Payment Required e ele trocou os MP4 pelo próprio código rodando no navegador, com menos de 1 MB por play. Quem faz conteúdo para produto pode copiar o método hoje, escolhendo um vídeo de referência que admira e pedindo três variações inspiradas nele antes de escrever qualquer roteiro.</p>
+        <p class="cta"><a href="https://x.com/guilippert_v4/status/2109665742799184066">post</a> · <a href="https://v4mos-videos.vercel.app/">V4MOS · vídeos em código</a></p>
       </article>
     </div>
 
     <div class="sec">
       <span class="idx">03</span>
-      <h2>No silício da Apple</h2>
-      <span class="kicker">Core AI · macOS</span>
+      <h2>A Apple quer a bancada da cozinha</h2>
+      <span class="kicker">Apple · casa</span>
     </div>
 
-    <div class="wide">
+    <section class="lede">
       <article class="story">
-        <div class="kicker">embeddings · Neural Engine</div>
-        <figure><img src="img/embeddinggemma.jpg" alt="Card do Hugging Face do repositório EverPaper/embeddinggemma-2-coreai sobre um gradiente azul e laranja" /></figure>
-        <h3><a href="https://x.com/getEverPaper/status/2109701033954091135">A EverPaper portou o EmbeddingGemma 2 para o Core AI, com texto, imagem e áudio no mesmo espaço de embeddings</a></h3>
-        <p>A equipe do EverPaper (@getEverPaper) converteu o EmbeddingGemma 2, modelo de embeddings do Google da família Gemma 4, para o Core AI, o runtime de machine learning que a Apple estreou no macOS 27. O resultado coloca um screenshot, um slide, uma foto, um memo de voz ou um trecho de texto no mesmo vetor de 768 dimensões, de modo que a busca "gráfico de barras de vendas por cidade" encontra a imagem certa sem legenda nenhuma. No Neural Engine, um texto curto leva cerca de 5 ms, uma imagem cerca de 0,37 s e um áudio de 3 segundos uns 18 ms, quase sem gastar CPU nem GPU, e o pacote sai sob Apache-2.0 com um package em Swift e um runner em Python. O README avisa que o primeiro load pode levar alguns minutos enquanto o sistema especializa o modelo, então o caminho é baixar com <code>hf download EverPaper/embeddinggemma-2-coreai</code> e rodar o smoke test com calma antes de indexar qualquer coisa.</p>
-        <p class="cta"><a href="https://x.com/getEverPaper/status/2109701033954091135">post</a> · <a href="https://huggingface.co/EverPaper/embeddinggemma-2-coreai">Hugging Face</a></p>
+        <div class="kicker">Apple · smart display</div>
+        <h3><a href="https://x.com/johnternus/status/2109995948407476369">Com o HomeView, a Apple finalmente coloca uma tela no centro da casa conectada</a></h3>
+        <p>"Welcome HomeView" foi tudo o que John Ternus (@johnternus) escreveu ao postar o vídeo do novo aparelho, um dos primeiros lançamentos desde que ele assumiu como CEO da Apple no lugar de Tim Cook, em 1º de setembro. O HomeView junta uma tela quadrada de 7 polegadas a uma base de alto-falante e funciona como central da casa, com controle de luzes, fechaduras, termostatos e câmeras, chamadas de FaceTime, música e um porta-retratos digital quando está parado. O centro da proposta é o Siri AI, a versão refeita do assistente que, segundo a AFP, usa tecnologia do Gemini, e o aparelho reconhece até seis pessoas da casa para mostrar mensagens, agenda e lembretes de cada uma. Ele custa US$ 299 nos Estados Unidos, chega em 13 de novembro e o Brasil não está na lista de países da pré-venda, então por enquanto o que dá para fazer é assistir ao vídeo longo da Apple e reparar em como ela resolve um aparelho que é da família inteira e, ao mesmo tempo, pessoal para cada um.</p>
+        <p class="cta"><a href="https://x.com/johnternus/status/2109995948407476369">vídeo</a> · <a href="https://www.afp.com/en/apple-unveils-homeview-smart-display-renewed-home-push">AFP</a> · <a href="https://www.macrumors.com/2026/10/13/apple-shares-videos-for-homeview-and-more/">vídeos da Apple</a></p>
       </article>
-      <article class="story">
-        <div class="kicker">macOS · window manager</div>
-        <figure><img src="img/chain.jpg" alt="Banner do ChainYourMac com o título The scrolling window manager for macOS e uma fila de janelas lado a lado: terminal, notes, editor, browser, music e mail" /></figure>
-        <h3><a href="https://x.com/ahmedgagan11/status/2100872465454887390">O Chain Your Mac põe todas as janelas numa faixa horizontal sem fim, no estilo do niri</a></h3>
-        <p>Ahmed Gagan (@ahmedgagan11) criou o Chain Your Mac, um scrolling window manager que leva para o macOS o modelo do PaperWM e do niri, populares no Linux. Em vez de dividir a tela em pedaços cada vez menores, como fazem yabai e AeroSpace, ele enfileira as janelas numa faixa que passa da borda do monitor, e cada app novo abre ao lado do que está em foco sem encolher os outros. A interface é em SwiftUI, o engine roda em Rust, o app pede só a permissão de Accessibility e a licença custa US$ 19,99 vitalícios. Como a venda não tem reembolso, vale abrir antes a demo interativa do site, que responde aos mesmos atalhos com ⌃⌥ do app de verdade.</p>
-        <p class="cta"><a href="https://x.com/ahmedgagan11/status/2100872465454887390">vídeo</a> · <a href="https://chainyourmac.com">chainyourmac.com</a></p>
-      </article>
-    </div>
+      <figure>
+        <img src="img/homeview.jpg" alt="Três HomeViews lado a lado sobre bases de alto-falante em cores diferentes: o da esquerda numa chamada de FaceTime, o do meio com relógio sobre a foto de uma menina fazendo bola de chiclete e o da direita com controles de termostato, fechadura e luzes" />
+        <figcaption>Três telas, três usos: FaceTime, relógio sobre foto e o painel da casa com termostato, fechadura e luzes.</figcaption>
+      </figure>
+    </section>
 
     <div class="sec">
       <span class="idx">04</span>
-      <h2>Fora da ferramenta oficial</h2>
-      <span class="kicker">iOS · vídeo</span>
-    </div>
-
-    <div class="wide">
-      <article class="story">
-        <div class="kicker">iOS · open source</div>
-        <figure><img src="img/xtool.jpg" alt="VS Code no Ubuntu com um ContentView em SwiftUI e, no terminal, o comando xtool dev compilando o app e instalando no iPhone" /></figure>
-        <h3><a href="https://x.com/RoundtableSpace/status/2109105454328742233">O xtool compila, assina e instala apps de iOS a partir do Linux e do Windows, sem abrir o Xcode</a></h3>
-        <p>O perfil 0xMarioNawfal (@RoundtableSpace) espalhou o xtool, projeto open source sob licença MIT com quase 7 mil stars no GitHub que reproduz as partes essenciais do Xcode com padrões abertos. Ele transforma um Swift package em app de iOS, assina, instala no aparelho e ainda conversa com o Apple Developer Services por código, tudo a partir do Linux, do Windows via WSL ou do próprio macOS. O projeto não distribui nada da Apple: no setup, a pessoa baixa o <code>Xcode.xip</code> por conta própria e o xtool gera o SDK do iOS a partir dele. Para sentir o fluxo, basta instalar o AppImage, rodar <code>xtool setup</code>, criar um projeto com <code>xtool new</code> e mandar <code>xtool dev</code> com o iPhone plugado, que é exatamente o que aparece no screenshot do README.</p>
-        <p class="cta"><a href="https://x.com/RoundtableSpace/status/2109105454328742233">post</a> · <a href="https://github.com/xtool-org/xtool">GitHub</a> · <a href="https://xtool.sh/documentation/xtool/">docs</a></p>
-      </article>
-      <article class="story">
-        <div class="kicker">Claude · edição de vídeo</div>
-        <figure><img src="img/opus-video.jpg" alt="Quadro do vídeo do Condz com ele falando à esquerda e, à direita, um terminal do Claude com o pedido corta esse vídeo de 9 min pra 6:30 e a legenda 100% editado pelo Claude" /></figure>
-        <h3><a href="https://x.com/condzxyz/status/2109454493415023080">Condz publicou um vídeo de seis minutos inteiramente editado pelo Claude Opus 5.5 em meia hora</a></h3>
-        <p>O criador Condz (@condzxyz) postou um vídeo que, segundo ele, foi 100% editado pelo Claude Opus 5.5 em Max Effort, a partir de um único prompt e em cerca de 30 minutos. No meio do próprio vídeo aparece o terminal com o pedido: cortar a gravação de 9 minutos para 6min30, o que rendeu 120 cortes de pausas e hesitações, além de gráficos, motion e trilha, com cortes para o Instagram como próximo passo. O resultado tem cara de vídeo editado por gente, com cartelas tipográficas e transições, e ele promete que este é o primeiro de muitos. O post não detalha o harness nem as ferramentas usadas por baixo, então a forma de aprender é assistir prestando atenção nas cartelas e perguntar a ele nas respostas qual stack o agent usou para cortar e renderizar.</p>
-        <p class="cta"><a href="https://x.com/condzxyz/status/2109454493415023080">vídeo</a></p>
-      </article>
-    </div>
-
-    <div class="sec">
-      <span class="idx">05</span>
       <h2>Radar</h2>
       <span class="kicker">notas curtas</span>
     </div>
@@ -164,29 +139,31 @@
     <div class="classifieds">
       <div class="ad">
         <div class="kicker">bookmarks</div>
-        <h3>7 saves desde a ed. 39</h3>
-        <p>Sete bookmarks entraram desde ontem, e a segunda-feira teve dois lançamentos grandes no mesmo dia, o da Meta e o da SpaceXSI. A capa ficou com o Muse Wonder porque é a notícia com mais consequência para quem escolhe modelo, mas a The X Subscription é a que mexe direto na fatura do Cursor.</p>
+        <h3>4 saves desde a ed. 40</h3>
+        <p>Foram quatro bookmarks desde ontem, todos de segunda e terça. A capa ficou com o DigUp porque é a coisa que dá para instalar e usar ainda hoje, enquanto o HomeView, o lançamento mais barulhento do dia, só chega às lojas em novembro e, por enquanto, longe do Brasil.</p>
       </div>
       <div class="ad">
-        <div class="kicker">resgate</div>
-        <h3>Um post de setembro que voltou</h3>
-        <p>O anúncio do Chain Your Mac é de 18 de setembro e só entrou na lista agora. Nesse meio-tempo o app já chegou à versão 2.2 e ganhou recursos como stacks, colunas em abas e um minimapa da faixa, então o que aparece no vídeo original já ficou um pouco para trás.</p>
+        <div class="kicker">sequência</div>
+        <h3>Dois caminhos para o mesmo modelo</h3>
+        <p>Ontem o EmbeddingGemma 2 apareceu convertido para o Core AI, rodando no Neural Engine, e hoje volta dentro do DigUp, rodando pelo llama.cpp na GPU. Em dois dias seguidos, o mesmo modelo apareceu em dois runtimes diferentes no Mac, o que costuma ser sinal de que ele vai virar peça padrão de busca local.</p>
       </div>
       <div class="ad">
-        <div class="kicker">pra terça</div>
-        <h3>A conta antes de unificar</h3>
-        <p>O experimento mais útil do dia é abrir o painel de uso do Cursor e ver quanto do último mês foi para Claude e GPT. Se a maior parte foi para modelos de terceiros, a The X Subscription pode sair mais cara, e como a troca é definitiva, essa conta precisa vir antes do clique.</p>
+        <div class="kicker">pra quarta</div>
+        <h3>Um teste de dez minutos</h3>
+        <p>O experimento mais rápido do dia é instalar o DigUp, indexar só a pasta de screenshots e procurar por algo que você lembra de ter visto, mas não sabe onde salvou. Se a busca acertar de primeira, vale estender o índice para os PDFs e para os repositórios de código.</p>
       </div>
     </div>
 
 
+
     <footer>
-      <span>ed. 40 · 7 bookmarks novos</span>
+      <span>ed. 41 · 14 out 2026 · 4 bookmarks novos</span>
       <span>next <b>09:00 BRT</b> · só o que entrar esta noite</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-13" selected>40 · 13 out 2026</option>
+            <option value="2026-10-14" selected>41 · 14 out 2026</option>
+            <option value="2026-10-13">40 · 13 out 2026</option>
             <option value="2026-10-12">39 · 12 out 2026</option>
             <option value="2026-10-11">38 · 11 out 2026</option>
             <option value="2026-10-10">37 · 10 out 2026</option>
