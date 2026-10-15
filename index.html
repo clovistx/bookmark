@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STASH / 41 · 14 out 2026</title>
+  <title>STASH / 42 · 15 out 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -12,12 +12,13 @@
 <body>
   <div class="shell">
     <div class="hud">
-      <span>GRU / <b>qua</b></span>
+      <span>GRU / <b>qui</b></span>
       <span>signal · stash</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-14" selected>41 · 14 out 2026</option>
+            <option value="2026-10-15" selected>42 · 15 out 2026</option>
+            <option value="2026-10-14">41 · 14 out 2026</option>
             <option value="2026-10-13">40 · 13 out 2026</option>
             <option value="2026-10-12">39 · 12 out 2026</option>
             <option value="2026-10-11">38 · 11 out 2026</option>
@@ -62,11 +63,11 @@
       </label>
       <a class="arquivo" href="arquivo.html">arquivo</a>
       <a class="arquivo" href="assinar/">assinar</a>
-      <span>2026.10.14 · 41</span>
+      <span>2026.10.15 · 42</span>
     </div>
 
     <header class="mast">
-      <div class="issue">41</div>
+      <div class="issue">42</div>
       <div class="wordmark">Stash</div>
       <div class="meta">Clovis Teixeira<br>bookmarks do X</div>
     </header>
@@ -74,64 +75,110 @@
 
     <section class="lede">
       <article class="lead">
-        <div class="kicker">busca semântica · EmbeddingGemma 2</div>
-        <h2>O DigUp faz o Mac achar arquivos pelo que eles mostram e dizem, sem mandar nada para a nuvem</h2>
-        <p class="deck">O app open source que o perfil oficial do Gemma destacou na terça vive na menu bar e usa o EmbeddingGemma 2 para buscar foto, PDF, áudio, vídeo e código em linguagem natural, tudo rodando local.</p>
-        <p class="byline">Terça · @googlegemma · DigUp, de ARahim3</p>
-        <p>A provocação do post do Google Gemma (@googlegemma) é direta: e se o Spotlight entendesse o significado do que está dentro dos arquivos? O DigUp, projeto do desenvolvedor ARahim3 no GitHub, tenta responder isso com o EmbeddingGemma 2, o modelo de embeddings multimodal de 740M de parâmetros que o Google DeepMind lançou em outubro e que coloca texto, imagem, áudio e vídeo no mesmo espaço vetorial. Na prática, a busca "zebra in a video" abre o clipe no segundo em que a zebra aparece, "where they talk about sleep" pula para o minuto certo de um podcast e uma cláusula de contrato aparece com as palavras marcadas na página do PDF. O app também mantém um índice de keywords ao lado dos vetores, então números de nota, códigos de erro e nomes continuam sendo encontrados exatamente como foram escritos, inclusive dentro de screenshots.</p>
-        <p>Por baixo, o DigUp roda o build de 8 bits do modelo pelo llama.cpp na GPU, guarda tudo num índice SQLite e só vai à internet para baixar o modelo uma vez, com 865 MB, e checar atualização, sem conta e sem telemetria. É o segundo dia seguido em que o EmbeddingGemma 2 aparece no STASH, depois do port para o Core AI da EverPaper, e agora já existe um app pronto em cima dele. O caminho mais curto é instalar com <code>brew install --cask arahim3/tap/digup</code>, apontar uma pasta de screenshots e PDFs, abrir o painel com ⇧⌘Space e, como o modelo cobre mais de 100 idiomas, testar uma busca em português contra arquivos escritos em inglês. Para quem programa, a busca com o prefixo <code>code:</code> encontra funções pelo que elas fazem e abre o arquivo na linha certa no Zed, no VS Code ou no Cursor.</p>
-        <p class="cta"><a href="https://x.com/googlegemma/status/2110044337849692644">vídeo</a> · <a href="https://github.com/ARahim3/DigUp">GitHub</a> · <a href="https://github.com/ARahim3/DigUp/releases">download</a></p>
+        <div class="kicker">React · motion · OSS</div>
+        <h2>O React Bits 2.0 chega com 216 componentes animados, rebuild completo e o mesmo preço de sempre: zero</h2>
+        <p class="deck">David Haz (@davidhaz) apresentou a segunda geração da biblioteca open source que vira atalho para interfaces com microinterações: componentes mais nítidos, presets prontos e ferramentas de design reconstruídas do zero.</p>
+        <p class="byline">Quinta · @davidhaz · reactbits.dev</p>
+        <p>O post de manhã anuncia o React Bits 2.0 como a biblioteca que a comunidade já conhecia, só que refeita. São 216 componentes animados em React, gratuitos e open source, com visual mais afiado, movimento mais suave e um fluxo que parte de presets em vez de começar do branco. O site reactbits.dev continua sendo a vitrine e o ponto de cópia, e o vídeo do lançamento mostra a coleção rodando em tela cheia, com o tipo de UI que normalmente pede um motion designer no time.</p>
+        <p>Para quem monta landing, dashboard ou demo de produto, o ganho é velocidade sem abrir mão de polish: escolher um bloco pronto, ajustar o preset e encaixar no projeto. O caminho mais curto é abrir o site, filtrar pela categoria que você precisa hoje e clonar um componente num sandbox antes de decidir se a biblioteca vira dependência fixa do design system.</p>
+        <p class="cta"><a href="https://x.com/davidhaz/status/2110656515996832231">vídeo</a> · <a href="https://reactbits.dev">reactbits.dev</a></p>
       </article>
       <figure>
-        <img src="img/digup.jpg" alt="Painel de busca do DigUp com a consulta zebra in a video, mostrando o vídeo Masai Mara - day 2.mp4 aberto no frame de 0:42 com zebras pastando e duas fotos de zebras como resultados extras" />
-        <figcaption>"zebra in a video": o DigUp acha o frame exato, aos 0:42, num vídeo que não tem legenda nem tag.</figcaption>
+        <img src="img/reactbits.jpg" alt="Still do vídeo de lançamento do React Bits 2.0 com interface escura e componentes animados em tela cheia" />
+        <figcaption>React Bits 2.0: 216 componentes animados, rebuild completo e licença open source.</figcaption>
       </figure>
     </section>
 
     <div class="sec">
       <span class="idx">02</span>
-      <h2>O que o harness decide</h2>
-      <span class="kicker">agents · vídeo em código</span>
+      <h2>Grok Voice 3.0 assume o topo</h2>
+      <span class="kicker">speech-to-speech · Realtime API</span>
     </div>
+
+    <section class="lede">
+      <article class="story">
+        <div class="kicker">SpaceXAI · benchmark</div>
+        <h3><a href="https://x.com/SpaceXSI/status/2110416580899168305">O Grok Voice 3.0 estreia em primeiro no Speech-to-Speech Index e responde em menos de um segundo</a></h3>
+        <p>A SpaceX Super Intelligence (@SpaceXSI) apresentou o Grok Voice 3.0 como o modelo speech-to-speech mais inteligente do momento, feito para resolver ligações de atendimento, responder em menos de um segundo e custar menos que outros frontier models. No mesmo dia, a Artificial Analysis (@ArtificialAnlys) colocou o modelo em #1 no Speech-to-Speech Index, com 86,9 pontos, à frente do GPT-Live-1 Astra (83,2) e do Gemini 3.8 Live Extended Thinking (82,6), e registrou 0,81 s de time to first audio no Big Bench Audio. O preço na Realtime API fica em US$ 0,08 por minuto, ou US$ 4,80 por hora de áudio de entrada, o mesmo do Grok Voice 2.0 e cerca de 2,2× mais barato que o GPT-Realtime-2.1 High. Quem já experimenta agents por voz pode abrir o índice da Artificial Analysis, olhar o trade-off entre qualidade, latência e custo e testar o Rex voice na Realtime API numa chamada curta de suporte ou de agenda.</p>
+        <p class="cta"><a href="https://x.com/SpaceXSI/status/2110416580899168305">anúncio</a> · <a href="https://x.com/ArtificialAnlys/status/2110421964095713743">Speech-to-Speech Index</a></p>
+      </article>
+      <figure>
+        <img src="img/spacexsi.jpg" alt="Card de lançamento do Grok Voice 3.0 pela SpaceX Super Intelligence, com tipografia grande sobre fundo escuro" />
+        <figcaption>Grok Voice 3.0: #1 no índice da Artificial Analysis (86,9) e US$ 0,08/min na Realtime API.</figcaption>
+      </figure>
+    </section>
 
     <div class="wide">
       <article class="story">
-        <div class="kicker">coding agents · custo</div>
-        <figure><img src="img/reason.png" alt="Gráfico Quality vs cost Pareto frontier com o Coding Agent Index no eixo vertical e o custo por tarefa no horizontal; a estrela dourada do Reason com GPT-6 Astra xhigh aparece perto de 65 pontos e 4 dólares, acima de Codex, Claude Code, Devin e Muse Code" /></figure>
-        <h3><a href="https://x.com/reasonmachines/status/2110001062216376724">O Reason quer provar que o harness, e não o modelo, é quem define a conta de um coding agent</a></h3>
-        <p>A Reason (@reasonmachines) apresentou o Reason Agent 1.1, um harness de código que, rodando o mesmo GPT-6 Astra, superou o Codex no Coding Agent Index da Artificial Analysis, com 65,1 contra 62,5, e saiu 22% mais barato por tarefa resolvida, segundo a própria empresa. O truque tem dois pilares: uma ferramenta chamada codemode, em que o modelo escreve um único programa em JavaScript que chama as outras tools em paralelo, e um conjunto mínimo de tools com prompt fixo, de modo que cada turno só acrescenta conteúdo e quase tudo fica elegível para cache. O resultado declarado é 23% menos tokens de input por tentativa, e o post diz que o harness, construído em cima do Pi, pode ser usado de graça. Como os números vêm dos testes da própria Reason, o melhor uso do anúncio é abrir os jobs públicos no Harbor que o blog linka e, se o teu time paga muito em tokens de input, olhar a taxa de cache hit do agent que vocês já usam.</p>
-        <p class="cta"><a href="https://x.com/reasonmachines/status/2110001062216376724">post</a> · <a href="https://reasonmachines.com/blog/introducing-reason-agent-1-1">blog do Reason Agent 1.1</a></p>
-      </article>
-      <article class="story">
-        <div class="kicker">vídeo · prompt</div>
-        <figure><img src="img/v4mos.jpg" alt="Página V4MOS vídeos feitos em código, com o título Salve, galera do X, o prompt original num balão e um player com a frase Mas qual campanha virou reunião, seguido das miniaturas das opções A, B, D e E" /></figure>
-        <h3><a href="https://x.com/guilippert_v4/status/2109665742799184066">Guilherme Lippert mostra que o melhor prompt para vídeo em código é um vídeo de exemplo</a></h3>
-        <p>Respondendo a Deborah Folloni (@dfolloni), Guilherme Lippert (@guilippert_v4) contou que o que mais funcionou para ele foi entregar vídeos de exemplo ao agent e pedir apenas que ele se inspirasse, com cada resultado saindo em one-shot. A página V4MOS · vídeos em código mostra o prompt que começou tudo, um link para um post de motion design e a frase "eu gosto de coisa mais dinâmica assim", que rendeu opções de vídeo em 16:9 e 9:16 com trilha e efeitos sintetizados por código, sem samples. A história dos bastidores também é boa: a página puxou 294 GB num único dia contra uma franquia de 100 GB por mês, a hospedagem cortou tudo com um 402 Payment Required e ele trocou os MP4 pelo próprio código rodando no navegador, com menos de 1 MB por play. Quem faz conteúdo para produto pode copiar o método hoje, escolhendo um vídeo de referência que admira e pedindo três variações inspiradas nele antes de escrever qualquer roteiro.</p>
-        <p class="cta"><a href="https://x.com/guilippert_v4/status/2109665742799184066">post</a> · <a href="https://v4mos-videos.vercel.app/">V4MOS · vídeos em código</a></p>
+        <div class="kicker">Artificial Analysis · índice</div>
+        <figure><img src="img/grokvoice-aa.jpg" alt="Gráfico do Speech-to-Speech Index da Artificial Analysis com Grok Voice 3.0 em primeiro lugar com 86,9 pontos" /></figure>
+        <h3><a href="https://x.com/ArtificialAnlys/status/2110421964095713743">No gráfico da Artificial Analysis, o salto de 81,3 para 86,9 fecha o gap com GPT-Live e Gemini Live</a></h3>
+        <p>O still animado do índice deixa o ranking legível de uma vez: Grok Voice 3.0 abre com 86,9, sobe 5,6 pontos sobre a geração anterior e lidera também em Task Success Rate (94,8%). Vale guardar o frame ao lado do card de lançamento da SpaceXSI para comparar narrativa de produto e prova de benchmark no mesmo dia.</p>
+        <p class="cta"><a href="https://x.com/ArtificialAnlys/status/2110421964095713743">índice completo</a></p>
       </article>
     </div>
 
     <div class="sec">
       <span class="idx">03</span>
-      <h2>A Apple quer a bancada da cozinha</h2>
-      <span class="kicker">Apple · casa</span>
+      <h2>O bot que orquestra o time</h2>
+      <span class="kicker">Grok Bot · aliases · marketplace</span>
     </div>
 
-    <section class="lede">
+    <div class="wide">
       <article class="story">
-        <div class="kicker">Apple · smart display</div>
-        <h3><a href="https://x.com/johnternus/status/2109995948407476369">Com o HomeView, a Apple finalmente coloca uma tela no centro da casa conectada</a></h3>
-        <p>"Welcome HomeView" foi tudo o que John Ternus (@johnternus) escreveu ao postar o vídeo do novo aparelho, um dos primeiros lançamentos desde que ele assumiu como CEO da Apple no lugar de Tim Cook, em 1º de setembro. O HomeView junta uma tela quadrada de 7 polegadas a uma base de alto-falante e funciona como central da casa, com controle de luzes, fechaduras, termostatos e câmeras, chamadas de FaceTime, música e um porta-retratos digital quando está parado. O centro da proposta é o Siri AI, a versão refeita do assistente que, segundo a AFP, usa tecnologia do Gemini, e o aparelho reconhece até seis pessoas da casa para mostrar mensagens, agenda e lembretes de cada uma. Ele custa US$ 299 nos Estados Unidos, chega em 13 de novembro e o Brasil não está na lista de países da pré-venda, então por enquanto o que dá para fazer é assistir ao vídeo longo da Apple e reparar em como ela resolve um aparelho que é da família inteira e, ao mesmo tempo, pessoal para cada um.</p>
-        <p class="cta"><a href="https://x.com/johnternus/status/2109995948407476369">vídeo</a> · <a href="https://www.afp.com/en/apple-unveils-homeview-smart-display-renewed-home-push">AFP</a> · <a href="https://www.macrumors.com/2026/10/13/apple-shares-videos-for-homeview-and-more/">vídeos da Apple</a></p>
+        <div class="kicker">eng · projects</div>
+        <h3><a href="https://x.com/vinvan/status/2110522022518272290">Vincent van der Meulen descreve o setup em que um eng bot roteia a voz para o projeto certo e devolve PRs</a></h3>
+        <p>Vincent van der Meulen (@vinvan) resumiu um fluxo de engenharia com o Grok @bot em quatro passos: um Cursor project por workstream grande, cloud agents sempre em /poteto-mode, um eng bot cuja única função é rotear pedidos ao projeto certo e, no fim, uma voice call para despejar a lista de tarefas. O resultado prometido é o braindump cair no projeto correto e virar PRs, sem o humano ter de lembrar qual stack atende cada fila. Quem joga com vários agents em paralelo pode começar pequeno: criar dois projects (bugs e features), configurar o roteador e gravar uma call de cinco minutos para ver se as tarefas aterrissam no lugar certo.</p>
+        <p class="cta"><a href="https://x.com/vinvan/status/2110522022518272290">post</a></p>
       </article>
-      <figure>
-        <img src="img/homeview.jpg" alt="Três HomeViews lado a lado sobre bases de alto-falante em cores diferentes: o da esquerda numa chamada de FaceTime, o do meio com relógio sobre a foto de uma menina fazendo bola de chiclete e o da direita com controles de termostato, fechadura e luzes" />
-        <figcaption>Três telas, três usos: FaceTime, relógio sobre foto e o painel da casa com termostato, fechadura e luzes.</figcaption>
-      </figure>
-    </section>
+      <article class="story">
+        <div class="kicker">email · aliases</div>
+        <figure><img src="img/aliases.jpg" alt="Tela do Grok Bot mostrando plus aliases para envio e recebimento de e-mail e rotinas por alias" /></figure>
+        <h3><a href="https://x.com/SamSokolin/status/2110496237241667621">O Grok Bot ganha plus aliases: e-mail dedicado e rotinas que só disparam para um endereço</a></h3>
+        <p>Sam Sokolin (@SamSokolin) anunciou que o Grok @bot agora aceita plus aliases para enviar e receber e-mail com endereços dedicados, ou para criar rotinas que só rodam quando a mensagem chega a um alias específico. Na prática, isso separa filas (newsletter, suporte, invoices) sem abrir outra caixa, e deixa cada rotina escopada ao canal certo. O teste óbvio é criar um alias só para um fluxo, apontar uma rotina e mandar um e-mail de prova para ver se o bot responde só naquele endereço.</p>
+        <p class="cta"><a href="https://x.com/SamSokolin/status/2110496237241667621">post</a></p>
+      </article>
+      <article class="story">
+        <div class="kicker">marketplace · templates</div>
+        <figure><img src="img/marketplace.jpg" alt="Screenshot do marketplace de templates do Grok Bot compartilhado por Phil Holland" /></figure>
+        <h3><a href="https://x.com/dfolloni/status/2110415946531889517">Deborah Folloni celebra o marketplace em que criar um template de Grok Bot vira receita por uso</a></h3>
+        <p>Deborah Folloni (@dfolloni) elogiou o modelo em que você cria um Grokbot, compartilha o template e ganha dinheiro cada vez que alguém o usa, citando o post de Phil Holland (@Phil_Holland) sobre o lançamento. A comparação com os custom GPTs da OpenAI é direta: a ideia existia, mas sem incentivo financeiro claro. Para quem já tem um bot afiado para um nicho, o próximo passo é empacotar o template, publicar e medir se o uso pago justifica manter a versão pública.</p>
+        <p class="cta"><a href="https://x.com/dfolloni/status/2110415946531889517">post</a> · <a href="https://x.com/Phil_Holland/status/2110158900578124260">anúncio citado</a></p>
+      </article>
+    </div>
 
     <div class="sec">
       <span class="idx">04</span>
+      <h2>Componentes, traces e motion</h2>
+      <span class="kicker">React Native · OpenTelemetry · GSAP</span>
+    </div>
+
+    <div class="wide">
+      <article class="story">
+        <div class="kicker">Expo · Tailwind</div>
+        <figure><img src="img/panelui.jpg" alt="Card do PanelUI com preview de componentes React Native para Expo estilizados com Tailwind" /></figure>
+        <h3><a href="https://x.com/KhalidDevLog/status/2110385439219581365">O PanelUI entrega 138 componentes tipados para Expo, com Tailwind, e ainda é gratuito</a></h3>
+        <p>Khalid (@KhalidDevLog) não escondeu a surpresa: o PanelUI (panelui.dev) é uma biblioteca de UI para React Native no Expo, com 138 componentes tipados, estilo Tailwind, animações na UI thread e suporte ao Expo Go, tudo de graça. Para times que montam app mobile sem reinventar botão, lista e formulário, o atalho é abrir o site, copiar um componente no Expo Go e medir se a acessibilidade e o typing aguentam o design system do produto.</p>
+        <p class="cta"><a href="https://x.com/KhalidDevLog/status/2110385439219581365">vídeo</a> · <a href="https://panelui.dev">panelui.dev</a></p>
+      </article>
+      <article class="story">
+        <div class="kicker">GSAP · React/Vue</div>
+        <figure><img src="img/annnimate.jpg" alt="Hero do site Annnimate com motion components GSAP para React e Vue" /></figure>
+        <h3><a href="https://x.com/juli_fella/status/2110300286161989943">O Annnimate traz os motion components GSAP de sites-marco para React e Vue</a></h3>
+        <p>Julian Fella (@juli_fella) apontou para o Annnimate (annnimate.com), da Good Fella: componentes de motion com GSAP pensados para copiar o nível de sites de referência direto no projeto React ou Vue. A proposta é produção, não demo de três frames. Quem precisa de scroll-driven animation ou de um hero que não pareça template pode abrir o site, escolher um bloco e colar no codebase antes de escrever a timeline do zero.</p>
+        <p class="cta"><a href="https://x.com/juli_fella/status/2110300286161989943">post</a> · <a href="https://annnimate.com">annnimate.com</a></p>
+      </article>
+      <article class="story">
+        <div class="kicker">observability · beta</div>
+        <figure><img src="img/otel.jpg" alt="Still do anúncio da Claude Platform mostrando traces OpenTelemetry no stack de observabilidade" /></figure>
+        <h3><a href="https://x.com/ClaudeDevs/status/2110421732029063352">A Claude Platform passa a exportar traces OpenTelemetry da Messages API, dos Managed Agents e dos SDKs</a></h3>
+        <p>O perfil ClaudeDevs (@ClaudeDevs) anunciou a beta pública em que a Claude Platform envia traces OpenTelemetry da Messages API, dos Claude Managed Agents e dos SDKs para o stack de observabilidade que o time já usa. Dá para depurar latência, tokens e falhas no mesmo lugar em que já entram traces do Claude Code, e a documentação oficial cobre destino OTLP no Console e propagação via header W3C traceparent. Se o produto já fala com a Messages API, o experimento do dia é cadastrar um destino OTLP e filtrar por service.name = claude-platform na ferramenta de APM.</p>
+        <p class="cta"><a href="https://x.com/ClaudeDevs/status/2110421732029063352">vídeo</a> · <a href="https://platform.claude.com/docs/en/manage-claude/opentelemetry">docs OpenTelemetry</a> · <a href="https://claude.com/resources/articles/agent-observability-on-the-claude-platform">artigo</a></p>
+      </article>
+    </div>
+
+    <div class="sec">
+      <span class="idx">05</span>
       <h2>Radar</h2>
       <span class="kicker">notas curtas</span>
     </div>
@@ -139,30 +186,46 @@
     <div class="classifieds">
       <div class="ad">
         <div class="kicker">bookmarks</div>
-        <h3>4 saves desde a ed. 40</h3>
-        <p>Foram quatro bookmarks desde ontem, todos de segunda e terça. A capa ficou com o DigUp porque é a coisa que dá para instalar e usar ainda hoje, enquanto o HomeView, o lançamento mais barulhento do dia, só chega às lojas em novembro e, por enquanto, longe do Brasil.</p>
+        <h3>12 saves desde a ed. 41</h3>
+        <p>Foram doze bookmarks desde ontem, com peso em Grok Bot, UI kits e voz. A capa ficou com o React Bits 2.0 porque é a peça que dá para abrir e copiar ainda hoje, enquanto o Grok Voice 3.0 é a notícia de benchmark que redefine a conversa sobre speech-to-speech.</p>
       </div>
       <div class="ad">
-        <div class="kicker">sequência</div>
-        <h3>Dois caminhos para o mesmo modelo</h3>
-        <p>Ontem o EmbeddingGemma 2 apareceu convertido para o Core AI, rodando no Neural Engine, e hoje volta dentro do DigUp, rodando pelo llama.cpp na GPU. Em dois dias seguidos, o mesmo modelo apareceu em dois runtimes diferentes no Mac, o que costuma ser sinal de que ele vai virar peça padrão de busca local.</p>
+        <div class="kicker">crescimento</div>
+        <h3>Quando o post explode, o trabalho começa</h3>
+        <p>Gabriel Buzzi (@gabrielbuzziv) publicou um playbook em português para as quatro horas depois de um post viral: responder nos primeiros 30 minutos, não postar outra coisa em cima, desdobrar com quote do original e anotar as dúvidas repetidas como backlog. Métrica sem retenção, diz ele, é só vaidade.</p>
+        <p class="cta"><a href="https://x.com/gabrielbuzziv/status/2110335061656736137">post</a></p>
       </div>
       <div class="ad">
-        <div class="kicker">pra quarta</div>
-        <h3>Um teste de dez minutos</h3>
-        <p>O experimento mais rápido do dia é instalar o DigUp, indexar só a pasta de screenshots e procurar por algo que você lembra de ter visto, mas não sabe onde salvou. Se a busca acertar de primeira, vale estender o índice para os PDFs e para os repositórios de código.</p>
+        <div class="kicker">vídeo · one-shot</div>
+        <figure><img src="img/dfolloni-video.jpg" alt="Frame vertical do vídeo one-shot que Deborah Folloni gerou com Opus 5.5 a partir do relatório State of Markets II" /></figure>
+        <h3>Deborah Folloni fecha um vídeo one-shot com Opus 5.5 a partir do State of Markets II</h3>
+        <p>No mesmo dia do marketplace, @dfolloni mostrou um vídeo feito em um único passe com o Opus 5.5: roteiro a partir do relatório da a16z, descrição visual por cena, voz via ElevenLabs e o próprio site como referência de estilo, em cerca de 18 minutos de trabalho do modelo. O link do relatório e o still do clipe estão no post.</p>
+        <p class="cta"><a href="https://x.com/dfolloni/status/2110413422458241228">vídeo</a> · <a href="https://a16z.com/state-of-markets-ii/">State of Markets II</a></p>
+      </div>
+      <div class="ad">
+        <div class="kicker">gráficos · DLSS 5</div>
+        <figure><img src="img/dlss5.jpg" alt="Frame de sim racing com NVIDIA DLSS 5 melhorando iluminação e materiais em tempo real" /></figure>
+        <h3>O DLSS 5 da NVIDIA já aparece melhorando luz e materiais no sim racing</h3>
+        <p>O Estagiário da F1 (@EstagiariodaF1) compartilhou um clipe em que o NVIDIA DLSS 5 deixa de ser só upscaling de resolução e FPS e passa a atuar na aparência de iluminação, materiais e detalhes em tempo real. O still do cockpit basta para ver o salto; quem acompanha rendering em games pode comparar o frame com e sem o caminho novo.</p>
+        <p class="cta"><a href="https://x.com/EstagiariodaF1/status/2110338966859997310">vídeo</a></p>
+      </div>
+      <div class="ad">
+        <div class="kicker">pra sexta</div>
+        <h3>Três testes de dez minutos</h3>
+        <p>Abrir o React Bits e colar um componente num sandbox; criar um plus alias no Grok Bot e disparar uma rotina só para ele; e cadastrar um destino OpenTelemetry na Claude Platform para ver o primeiro span da Messages API. Três caminhos curtos, zero overlap.</p>
       </div>
     </div>
 
 
 
     <footer>
-      <span>ed. 41 · 14 out 2026 · 4 bookmarks novos</span>
+      <span>ed. 42 · 15 out 2026 · 12 bookmarks novos</span>
       <span>next <b>09:00 BRT</b> · só o que entrar esta noite</span>
       <label class="ed-nav">
         <span>ed.</span>
         <select data-editions aria-label="Edição">
-            <option value="2026-10-14" selected>41 · 14 out 2026</option>
+            <option value="2026-10-15" selected>42 · 15 out 2026</option>
+            <option value="2026-10-14">41 · 14 out 2026</option>
             <option value="2026-10-13">40 · 13 out 2026</option>
             <option value="2026-10-12">39 · 12 out 2026</option>
             <option value="2026-10-11">38 · 11 out 2026</option>
