@@ -321,3 +321,55 @@ footer .ed-nav { letter-spacing: 0.12em; }
 .classifieds .ad:nth-child(4):last-child:has(figure) { grid-column: span 3; }
 .classifieds.handson { margin-top: 0; }
 @media (max-width: 820px) { .classifieds .ad:nth-child(4):last-child:has(figure) { grid-column: auto; } }
+
+/* ===== tema Roadster (sutil): vermelho Tesla, preto, prata ===== */
+:root {
+  --bg: #0a0a0c;
+  --panel: #131316;
+  --line: #2b2c31;
+  --mute: #9a9ca4;
+  --led: #f0343a;
+  --led-dim: #e8212722;
+  --silver: #c9ccd2;
+}
+.hud { border-top: 2px solid #e82127; }
+.hud b { color: var(--silver); }
+header.mast { position: relative; border-bottom: 1px solid var(--line); }
+.issue { color: #e82127; }
+.ruler {
+  height: 22px; margin-top: -1px; position: relative; border-bottom: 1px solid var(--line);
+  background:
+    repeating-linear-gradient(90deg, var(--silver) 0 1px, transparent 1px 10%) bottom / 100% 14px no-repeat,
+    repeating-linear-gradient(90deg, #5d5f66 0 1px, transparent 1px 2%) bottom / 100% 7px no-repeat;
+  opacity: .8;
+}
+.ruler span { position: absolute; top: 1px; font: 500 9px "IBM Plex Mono", monospace; letter-spacing: .1em; color: var(--mute); transform: translateX(3px); }
+.ruler i { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: linear-gradient(90deg, #e82127 0 81%, transparent 81%); }
+.cta a { border-bottom-color: var(--led); }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 18px; }
+.stat { background: var(--panel); padding: 14px 16px 16px; }
+.stat b { display: block; font: 800 38px/1 Syne, sans-serif; letter-spacing: -0.05em; color: var(--ink); }
+.stat b em { font-style: normal; color: #e82127; font-size: 0.5em; letter-spacing: 0; margin-left: 4px; }
+.stat span { display: block; margin-top: 8px; font: 400 11px/1.4 "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.lede-grid { align-items: start; }
+.lede-grid .lead figure { margin: 18px 0 0; }
+.lede-grid figure, .story figure, .ad figure { aspect-ratio: 16 / 10; overflow: hidden; background: #000; margin-bottom: 14px; }
+.lede-grid figure img, .story figure img { width: 100%; height: 100%; object-fit: cover; }
+.lede-grid figure { margin-top: 0; }
+.timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; counter-reset: t; position: relative; }
+.tl { position: relative; padding: 0 0 26px 26px; border-left: 1px solid var(--line); margin-left: 6px; }
+.tl::before { content: ""; position: absolute; left: -5px; top: 4px; width: 9px; height: 9px; background: var(--bg); border: 2px solid #e82127; border-radius: 50%; }
+.tl.big::before { background: #e82127; }
+.tl time { display: block; font: 500 11px "IBM Plex Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--led); margin-bottom: 6px; }
+.tl h3 { font-size: 19px; margin-bottom: 6px; }
+.tl p { font-size: 14.5px; margin-bottom: 6px; }
+.tl .cta { font-size: 11px; }
+.note { font: 400 11px/1.5 "IBM Plex Mono", monospace; color: var(--mute); letter-spacing: .04em; margin: 4px 0 0; }
+.wide .story, .classifieds .ad { min-width: 0; }
+.classifieds .ad figure { margin: 0 0 12px; }
+.badge-prev { color: var(--led); }
+@media (max-width: 820px) {
+  .timeline { grid-template-columns: 1fr; }
+  .stat b { font-size: 32px; }
+}
+code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: #1c1d22; padding: 1px 5px; color: var(--silver); overflow-wrap: anywhere; }
