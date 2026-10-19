@@ -330,3 +330,12 @@ footer .ed-nav { letter-spacing: 0.12em; }
 .wide { align-items: start; }
 .wide .story, .classifieds .ad { min-width: 0; }
 code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: #1c1d22; padding: 1px 5px; color: var(--ink); overflow-wrap: anywhere; }
+
+/* ===== ed. 45: edição curta, galeria em par e capa dupla sem células vazias ===== */
+.pair.gallery { padding: 28px 0 14px; border-bottom: 1px solid var(--line); }
+.pair figure, .lede-grid figure { margin: 0 0 14px; min-width: 0; }
+.pair figure img, .lede-grid figure img { width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; background: #000; }
+.lede-grid { align-items: start; }
+.lede-grid > * { min-width: 0; }
+.lede-grid .story h3 { font-size: clamp(24px, 3vw, 32px); }
+.lede figure img.card { aspect-ratio: 40 / 21; object-fit: cover; }
