@@ -348,6 +348,7 @@ code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: #
   align-items: center;
   gap: 28px;
   margin-top: 24px;
+  scroll-margin-top: 16px;
   padding: 14px 20px 14px 14px;
   border: 1px solid var(--line);
   background: var(--panel);
