@@ -339,3 +339,137 @@ code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: #
 .lede-grid > * { min-width: 0; }
 .lede-grid .story h3 { font-size: clamp(24px, 3vw, 32px); }
 .lede figure img.card { aspect-ratio: 40 / 21; object-fit: cover; }
+
+/* ===== player de áudio da edição (papo do colega) ===== */
+.listen {
+  --p: 0%;
+  display: grid;
+  grid-template-columns: auto minmax(0, auto) minmax(160px, 1fr) auto;
+  align-items: center;
+  gap: 28px;
+  margin-top: 24px;
+  scroll-margin-top: 16px;
+  padding: 14px 20px 14px 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.listen-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--led);
+  color: #0c0d10;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.listen-btn svg { width: 22px; height: 22px; fill: currentColor; grid-area: 1 / 1; }
+.listen-btn .i-play { transform: translateX(1px); }
+.listen-btn .i-pause { display: none; }
+.listen.is-playing .listen-btn .i-play { display: none; }
+.listen.is-playing .listen-btn .i-pause { display: block; }
+.listen-btn:hover { transform: scale(1.04); }
+.listen-btn:active { transform: scale(0.97); }
+.listen-btn:focus-visible, .listen-wave:focus-visible {
+  outline: 1px solid var(--led);
+  outline-offset: 4px;
+}
+.listen.is-playing .listen-btn { box-shadow: 0 0 0 5px var(--led-dim); }
+.listen-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.listen-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--led);
+  white-space: nowrap;
+}
+.listen-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--mute);
+  flex: none;
+}
+.listen.is-playing .listen-dot { background: var(--led); animation: listen-blink 1.6s ease-in-out infinite; }
+@keyframes listen-blink { 50% { opacity: 0.25; } }
+.listen-title {
+  font-family: Syne, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.listen-wave {
+  position: relative;
+  height: 44px;
+  cursor: pointer;
+  touch-action: none;
+  min-width: 0;
+}
+.listen-wave .bars {
+  position: absolute;
+  inset: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  pointer-events: none;
+}
+.listen-wave .bars i {
+  display: block;
+  flex: 1 1 0;
+  max-width: 4px;
+  min-height: 3px;
+  border-radius: 1px;
+  background: #3a3d46;
+}
+.listen-wave .bars.played { clip-path: inset(0 calc(100% - var(--p)) 0 0); }
+.listen-wave .bars.played i { background: var(--led); }
+.listen-wave::after {
+  content: "";
+  position: absolute;
+  top: 2px; bottom: 2px;
+  left: var(--p);
+  width: 1px;
+  background: var(--ink);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.listen.is-playing .listen-wave::after,
+.listen.is-seeking .listen-wave::after,
+.listen-wave:hover::after { opacity: 0.8; }
+.listen-time {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.listen-time .sep { color: var(--mute); margin: 0 6px; }
+.listen-time [data-listen-dur] { color: var(--mute); }
+@media (max-width: 820px) {
+  .listen {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "btn text text" "wave wave time";
+    gap: 10px 14px;
+    padding: 14px 16px 10px 14px;
+    margin-top: 18px;
+  }
+  .listen-btn { grid-area: btn; }
+  .listen-text { grid-area: text; }
+  .listen-title { font-size: 17px; }
+  .listen-wave { grid-area: wave; }
+  .listen-time { grid-area: time; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .listen-btn, .listen-wave::after { transition: none; }
+  .listen.is-playing .listen-dot { animation: none; }
+}
