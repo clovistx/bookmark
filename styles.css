@@ -473,3 +473,115 @@ code { font-family: "IBM Plex Mono", monospace; font-size: 0.85em; background: #
   .listen-btn, .listen-wave::after { transition: none; }
   .listen.is-playing .listen-dot { animation: none; }
 }
+
+/* ---- autoria: STASH é conteúdo do X de @clovistx ---- */
+.autoria {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  padding: 20px 24px 20px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--led);
+  min-width: 0;
+}
+.autoria-photo {
+  display: block;
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--bg);
+  box-shadow: 0 0 0 2px var(--led), 0 0 22px var(--led-dim);
+  flex: none;
+}
+.autoria-photo img {
+  display: block;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.autoria-body { min-width: 0; }
+.autoria-kicker {
+  display: block;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--led);
+  margin-bottom: 6px;
+}
+.autoria-name {
+  display: block;
+  font-family: Syne, sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.autoria-name i { font-style: normal; color: var(--mute); margin: 0 2px; }
+.autoria-name span { color: var(--led); }
+.autoria-name:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.autoria-line {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #c9c9c4;
+  max-width: 46ch;
+}
+.autoria-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 12px 18px;
+  background: var(--led);
+  color: #0c0d10;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--led);
+}
+.autoria-cta svg { width: 14px; height: 14px; fill: currentColor; flex: none; }
+.autoria-cta:hover { background: transparent; color: var(--led); }
+.autoria-photo:focus-visible, .autoria-name:focus-visible, .autoria-cta:focus-visible, .badge-x:focus-visible { outline: 2px solid var(--led); outline-offset: 3px; }
+
+footer a.badge-x {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--mute);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+footer a.badge-x i { width: 6px; height: 6px; border-radius: 50%; background: var(--led); flex: none; }
+footer a.badge-x:hover { border-color: var(--led); color: var(--led); }
+footer a.badge-x:hover b { color: var(--led); }
+
+@media (max-width: 820px) {
+  .autoria {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "photo body" "cta cta";
+    gap: 14px 16px;
+    padding: 16px;
+    margin-top: 18px;
+    align-items: start;
+  }
+  .autoria-photo { grid-area: photo; width: 72px; height: 72px; }
+  .autoria-body { grid-area: body; }
+  .autoria-name { font-size: 22px; }
+  .autoria-line { font-size: 14px; max-width: none; }
+  .autoria-cta { grid-area: cta; justify-content: center; width: 100%; box-sizing: border-box; }
+  footer a.badge-x { align-self: flex-start; }
+}
