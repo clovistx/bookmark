@@ -585,3 +585,7 @@ footer a.badge-x:hover b { color: var(--led); }
   .autoria-cta { grid-area: cta; justify-content: center; width: 100%; box-sizing: border-box; }
   footer a.badge-x { align-self: flex-start; }
 }
+
+/* ===== ed. 51: Radar com seis cards iguais, duas linhas cheias ===== */
+.classifieds.radar6 .ad:nth-child(4):has(figure) { grid-column: auto; display: flex; flex-direction: column; }
+.classifieds.radar6 .ad:nth-child(4):has(figure) figure { grid-row: auto; margin: 0 0 12px; }
