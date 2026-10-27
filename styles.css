@@ -589,3 +589,15 @@ footer a.badge-x:hover b { color: var(--led); }
 /* ===== ed. 51: Radar com seis cards iguais, duas linhas cheias ===== */
 .classifieds.radar6 .ad:nth-child(4):has(figure) { grid-column: auto; display: flex; flex-direction: column; }
 .classifieds.radar6 .ad:nth-child(4):has(figure) figure { grid-row: auto; margin: 0 0 12px; }
+
+/* ===== ed. 52: Radar com dois cards lado a lado e figura tipográfica ===== */
+.classifieds.radar2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.classifieds.radar2 .ad:nth-child(n) { grid-column: auto; }
+.classifieds .ad figure.type-fig { display: grid; place-items: center; background: var(--panel); border: 1px solid var(--line); }
+.type-fig > div { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 18px; text-align: center; }
+.type-fig b { font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.04em; line-height: 1; color: var(--led); }
+.type-fig span { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); max-width: 30ch; line-height: 1.6; }
+@media (max-width: 820px) {
+  .classifieds.radar2 { grid-template-columns: 1fr; }
+  .type-fig b { font-size: 38px; }
+}
