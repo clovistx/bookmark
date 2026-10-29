@@ -601,3 +601,11 @@ footer a.badge-x:hover b { color: var(--led); }
   .classifieds.radar2 { grid-template-columns: 1fr; }
   .type-fig b { font-size: 38px; }
 }
+
+/* ===== ed. 54: Radar com quatro cards em grade 2 x 2 ===== */
+.classifieds.radar2 .ad:nth-child(4):has(figure),
+.classifieds.radar2 .ad:nth-child(4):last-child:has(figure) { grid-column: auto; display: flex; flex-direction: column; }
+.classifieds.radar2 .ad:nth-child(4):has(figure) figure { grid-row: auto; margin: 0 0 12px; }
+.classifieds.radar2 .ad:nth-child(4):has(figure) .kicker,
+.classifieds.radar2 .ad:nth-child(4):has(figure) h3,
+.classifieds.radar2 .ad:nth-child(4):has(figure) p { grid-column: auto; }
