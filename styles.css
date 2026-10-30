@@ -609,3 +609,12 @@ footer a.badge-x:hover b { color: var(--led); }
 .classifieds.radar2 .ad:nth-child(4):has(figure) .kicker,
 .classifieds.radar2 .ad:nth-child(4):has(figure) h3,
 .classifieds.radar2 .ad:nth-child(4):has(figure) p { grid-column: auto; }
+
+/* ===== ed. 55: card largo no fim do Radar 2 x N ===== */
+.classifieds.radar2 .ad.span2 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 18px; align-content: start; }
+.classifieds.radar2 .ad.span2 figure { grid-column: 1; grid-row: 1 / span 4; margin: 0; align-self: start; }
+.classifieds.radar2 .ad.span2 .kicker, .classifieds.radar2 .ad.span2 h3, .classifieds.radar2 .ad.span2 p { grid-column: 2; }
+@media (max-width: 820px) {
+  .classifieds.radar2 .ad.span2 { display: flex; flex-direction: column; }
+  .classifieds.radar2 .ad.span2 figure { margin: 0 0 12px; }
+}
