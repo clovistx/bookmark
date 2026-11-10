@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STASH</title>
+  <script>
+    (function () {
+      var path = location.pathname || "/";
+      if (path.indexOf("/bookmark") === 0) {
+        path = "/stash" + path.slice("/bookmark".length);
+      } else if (path === "/") {
+        path = "/stash/";
+      } else {
+        path = "/stash" + (path.charAt(0) === "/" ? path : "/" + path);
+      }
+      if (path === "/stash") path = "/stash/";
+      var dest = "https://clovistx.github.io" + path + location.search + location.hash;
+      var link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = dest.split("#")[0].split("?")[0] || dest;
+      document.head.appendChild(link);
+      location.replace(dest);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://clovistx.github.io/stash/">
+  </noscript>
+</head>
+<body>
+  <p>O STASH mudou de endereço. <a href="https://clovistx.github.io/stash/">Abrir https://clovistx.github.io/stash/</a>.</p>
+</body>
+</html>
